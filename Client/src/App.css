@@ -1,0 +1,16 @@
+a:hover {
+  text-decoration: none;
+}
+body {
+  /* background-image: url('./images/12.jpeg'); */
+  /* background-size: cover; */
+  /* min-height: 100vh; */
+  /* background-repeat: no-repeat; */
+  /* height: 100%; */
+  /* position: relative; */
+  /* min-height: 100%; */
+  font-size: 0.8rem;
+  height: 100%;
+  line-height: 1;
+  /* min-height: 100%; */
+}

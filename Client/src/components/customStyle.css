@@ -1,0 +1,31 @@
+a:hover {
+  text-decoration: none;
+}
+img{
+  width: 20rem;
+  height: auto;
+}
+.original-price {
+  text-decoration: line-through;
+}
+
+footer {
+  clear: both;
+  /* position: fixed; */
+  /* top: 99%; */
+  bottom: 0;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  margin-top: auto;
+  background-color: black;
+  color: white;
+}
+
+.book:hover{
+  /* transform: rotate(-5deg);
+  transition: transform 10ms ease-in;
+  transition-delay: 200ms; */
+  box-shadow: 0 20px 20px 0 rgba(0,0,0,0.2);
+}
+

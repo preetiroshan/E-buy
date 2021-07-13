@@ -1,0 +1,44 @@
+.contact{
+  /* background-image: url('../images/book3.jpg'), linear-gradient(
+    rgba(245, 240, 240, 0.925),
+    rgba(247, 239, 239, 0.932)); */
+    /* The image used */
+    /* background-image: url("./book2.jpg"); */
+
+    /* Full height */
+    height: 50%;
+
+    /* Center and scale the image nicely */
+
+    /* overflow: hidden; */
+    position: relative;
+    /* opacity: 0.3; */
+}
+
+.contact::after {
+content: "";
+  background-image: url('../images/book3.jpg');
+  opacity: 0.6;
+  position: absolute;
+  z-index: -1;
+  background-position: top right;
+  background-repeat: no-repeat;
+  background-size: cover;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+;
+}
+
+.contact-container {
+  background-color: rgba(172, 169, 169, 0.8);
+}
+
+.contact-form {
+  padding: 20px;
+}
+
+.jumbo {
+  margin-bottom: 0 !important;
+}

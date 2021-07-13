@@ -1,0 +1,82 @@
+.navbar, .navbar-dark .navbar-nav a.nav-link{
+  color: rgba(255,255,255,1);
+}
+
+.navbar-dark .navbar-nav a.nav-link:hover{
+  color: #d8bc1e;
+}
+.navbar-dark{
+  background-color: black;
+  width : 100%
+}
+.navbar-dark .navbar-toggler {
+  border: none;
+  font-size: 2rem;
+  padding-left: 0;
+  /* width : 100% */
+}
+
+.header-nav {
+  background-color: black;
+  box-shadow: 0 20px 20px 0 rgba(0,0,0,0.2);
+}
+
+.form-control:focus {
+  border: none;
+  box-shadow: none;
+}
+
+@media screen and (max-width:767px){
+  .show {
+    background-color: rgb(51, 47, 51);
+    border-radius: 2%;
+  }
+}
+
+
+/* .navbar-collapse.collapsing {
+  left: -25%;
+  transition: height 0s ease;
+}
+
+.navbar-collapse.show {
+  left: 0;
+  transition: left 300ms ease-in-out;
+}
+
+.navbar-toggler.collapsed~.navbar-collapse {
+  transition: left 5000ms ease-in-out;
+}
+
+.navbar-collapse {
+  position: fixed;
+  top: 50px;
+  left: 0;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 15px;
+} */
+
+/* .nav */
+div .nav-item {
+  transition: 2s;
+}
+div .nav-item a:hover {
+  background-color: rgb(167, 161, 161);
+  /* border: none; */
+  color: white;
+
+}
+
+.navItem a{
+  border: none !important;
+  border-radius: 0 !important;
+}
+
+.navItem a:hover{
+  border: none
+}
+
+.navTabs {
+  /* border: none */
+}
