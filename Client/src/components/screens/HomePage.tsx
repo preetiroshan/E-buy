@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Row, Container } from 'react-bootstrap';
+import { Row, Container, Spinner } from 'react-bootstrap';
 import { TBook } from '../../data';
 import Book from '../Book';
 import { useDispatch, useSelector } from 'react-redux';
@@ -25,7 +25,7 @@ const HomePage = () => {
   console.log(booksList)
   return (
     <div>
-      { isLoading && <b>Loading...</b>}
+      { isLoading && <Spinner animation="border" variant="dark" />}
       {error && <b>Error occurred</b>}
       <HomeCarousel />
       <Container fluid className="justify-content-center">

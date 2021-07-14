@@ -8,8 +8,10 @@ import { FaBookReader, FaShoppingCart } from "react-icons/fa";
 import { CgMenuRound } from 'react-icons/cg';
 import styled from "styled-components";
 import "./Header.css";
-import { FaSearch } from 'react-icons/fa';
+import { FaSearch, FaHome } from 'react-icons/fa';
 import Search from './Search';
+import { BsChatQuote } from 'react-icons/bs';
+import { FcAbout } from 'react-icons/fc';
 
 const StyledBrand = styled(Navbar.Brand)`
 font-family: 'Dela Gothic One', cursive;
@@ -72,13 +74,13 @@ const Header = () => {
 			{/* <Container style={{ backgroundColor: '#000000' }}> */}
 			<Nav fill variant="tabs" className="navTabs">
 				<Nav.Item className="navItem">
-					<Nav.Link href="/">Home</Nav.Link>
+					<Nav.Link href="/">Home{` `}<FaHome /></Nav.Link>
 				</Nav.Item>
 				<Nav.Item className="navItem">
-					<Nav.Link href="/about">About Us</Nav.Link>
+					<Nav.Link href="/about">About Us<FcAbout /></Nav.Link>
 				</Nav.Item>
 				<Nav.Item className="navItem">
-					<Nav.Link href="/contact">Contact us</Nav.Link>
+					<Nav.Link href="/contact">Contact us{` `}<BsChatQuote /></Nav.Link>
 				</Nav.Item>
 			</Nav>
 		</>

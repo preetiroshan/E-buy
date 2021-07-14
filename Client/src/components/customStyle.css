@@ -11,15 +11,28 @@ img{
 
 footer {
   clear: both;
-  /* position: fixed; */
-  /* top: 99%; */
+  position: absolute;
+  bottom: 0;
   bottom: 0;
   width: 100%;
   max-width: 100%;
-  height: 100%;
+  /* height: 100%; */
   margin-top: auto;
   background-color: black;
   color: white;
+}
+
+footer .useful-links {
+  list-style: none;
+  font-size: 0.86rem;
+}
+
+footer .useful-links li {
+  cursor: pointer;
+}
+
+.social-media{
+  font-size: 2rem;;
 }
 
 .book:hover{
