@@ -7,10 +7,14 @@ body {
   /* min-height: 100vh; */
   /* background-repeat: no-repeat; */
   /* height: 100%; */
-  position: relative;
-  min-height: 100vh;
-  font-size: 0.8rem;
-  height: 100%;
-  line-height: 1;
+  /* position: relative; */
   /* min-height: 100%; */
+  font-size: 0.8rem;
+  /* height: 100%; */
+  line-height: 1;
 }
+
+#root {
+}
+  /* min-height: 100vh; */
+  /* pospition: relative; */

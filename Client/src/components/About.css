@@ -10,12 +10,12 @@
   background-repeat: no-repeat;
   background-size: cover;
   overflow: hidden;
-  position: relative;
+  /* position: relative; */
   opacity: 0.8;
 }
 
 .about {
-  position: absolute;
+  /* position: absolute; */
   height: 100%;
   /* color: white; */
   width: 40%;

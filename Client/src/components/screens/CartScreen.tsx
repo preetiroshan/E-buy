@@ -7,6 +7,7 @@ import { TCartState } from '../../redux/reducers/cartReducer';
 import { StoreState } from '../../redux/store';
 import { TAddToCartFilter } from '../../types';
 import CartItem from '../CartItem';
+import EmptyCart from '../EmptyCart';
 
 const CartScreen = ({ match }: any) => {
   const location = useLocation();
@@ -22,26 +23,33 @@ const CartScreen = ({ match }: any) => {
     }
   }, [dispatch, id, qty])
   return (
-    <Container>
-      <Row>
-        <Col lg={8}>
-          {
-            cartItems ?
-              cart.cartItems.map((item, key) => (
-                <CartItem key={key} item={item} />
-              ))
-              : <p>Cart is Empty</p>
-          }
-        </Col>
+    <>
+      {
+        cartItems.length ?
+          <Container className="cart">
+            <Row>
+              <Col lg={8}>
+                {
+                  cartItems ?
+                    cart.cartItems.map((item, key) => (
+                      <CartItem key={key} item={item} />
+                    ))
+                    : <p>Cart is Empty</p>
+                }
+              </Col>
 
-        <Col lg={4}>
-          Subtotal : {cartItems.reduce((a, c) => a + c.qty, 0)} items
+              <Col lg={4}>
+                Subtotal : {cartItems.reduce((a, c) => a + c.qty, 0)} items
           Total Price: {cartItems.reduce((a, c) => a + (c.qty * c.book.price), 0)}
-        </Col>
+              </Col>
 
-        <Button disabled={!cartItems.length} className="btn btn-warning">Proceed To Checkout</Button>
-      </Row>
-    </Container>
+              <Button disabled={!cartItems.length} className="btn btn-warning">Proceed To Checkout</Button>
+            </Row>
+          </Container>
+          : <EmptyCart />
+
+      }
+    </>
   )
 }
 

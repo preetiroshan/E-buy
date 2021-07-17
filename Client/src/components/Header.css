@@ -58,10 +58,10 @@
 } */
 
 /* .nav */
-div .nav-item {
-  transition: 2s;
+.navItem {
+  transition: 0.4s;
 }
-div .nav-item a:hover {
+.navItem:hover {
   background-color: rgb(167, 161, 161);
   /* border: none; */
   color: white;

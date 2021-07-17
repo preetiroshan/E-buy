@@ -18,7 +18,13 @@ const Book = ({ book }: TBookProps) => {
       <div>
         <Card.Img
           variant="top"
-          alt="notfound"
+          alt={`${name.length
+
+
+
+
+
+          }`}
           src={url}
           style={{ height: '20vw' }}
         />

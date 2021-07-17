@@ -5,8 +5,8 @@ import './customStyle.css';
 
 const Footer = () => {
   return (
-    <footer className="d-flex flex-column justify-content-around align-items-stretch text-center p-4">
-      <Row className="m-0 pt-4 px-4">
+    <footer className="d-flex flex-column justify-content-around mx-auto align-items-stretch text-center p-4">
+      <Row className="m-0 pt-4 px-4 justify-content-around">
         <Col sm={6}>
           <Row>
             <h5>
