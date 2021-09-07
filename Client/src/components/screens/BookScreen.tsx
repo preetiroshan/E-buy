@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react'
-import { TBook } from '../../data';
+import { TBook } from '../../types';
 import { Row, Col, Button, Form, Spinner, Container } from 'react-bootstrap';
 import styled from 'styled-components';
 import Rating from '@material-ui/core/Rating';

@@ -10,6 +10,8 @@ import {
 import { Formik } from "formik";
 import * as yup from "yup";
 import { FcGoogle } from "react-icons/fc";
+import { useDispatch } from "react-redux";
+import actions from "../redux/actions";
 
 const Login = () => {
 	const [firstName, setFirstName] = useState("");
@@ -26,6 +28,16 @@ const Login = () => {
 		password2: yup.string().required(),
 	});
 
+	const dispatch = useDispatch();
+	const handleSubmit = () => {
+		dispatch(
+			actions.signIn({
+				email: "abc@abc.com",
+				password: "pass",
+			})
+		);
+	};
+
 	return (
 		<div className="d-flex flex-row justify-content-center">
 			<Col lg={4} md={6}>
@@ -38,9 +50,11 @@ const Login = () => {
 								email: "",
 								password: "",
 							}}
-							onSubmit={(values, { setSubmitting, resetForm }) => {
-								console.log(values);
-								resetForm();
+							// onSubmit={(values, { setSubmitting, resetForm }) => {
+							onSubmit={() => {
+								handleSubmit();
+								console.log("hi");
+								// resetForm();
 							}}
 						>
 							{({
@@ -65,6 +79,7 @@ const Login = () => {
 												onChange={handleChange}
 												isInvalid={touched.email && !!errors.email}
 												error={errors.email}
+												// autoComplete="off"
 											/>
 											<Form.Control.Feedback type="invalid">
 												{errors.email}
@@ -87,23 +102,21 @@ const Login = () => {
 										</Form.Group>
 										<div className="d-flex flex-column align-items-center">
 											{/* <div> */}
-											<Button type="submit" onClick={handleSubmit}>
-												Login
-											</Button>
+											<Button type="submit">Login</Button>
 											or
-											<Button
+											{/* <Button
 												type="submit"
 												variant="light"
 												onClick={handleSubmit}
 											>
 												Sign in with <FcGoogle />
-											</Button>
+											</Button> */}
 											<br />
 											<br />
 											Don't have an account?
-											<Button type="submit" onClick={handleSubmit}>
+											{/* <Button type="submit" onClick={handleSubmit}>
 												Sign Up
-											</Button>
+											</Button> */}
 											{/* </div> */}
 										</div>
 									</Col>

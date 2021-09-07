@@ -62,7 +62,7 @@
   transition: 0.4s;
 }
 .navItem:hover {
-  background-color: rgb(167, 161, 161);
+  background-color: rgb(247, 239, 239);
   /* border: none; */
   color: white;
 

@@ -1,9 +1,24 @@
-const products = {
+import bcrypt from 'bcrypt';
+
+const data = {
+  users: [
+    {
+      name: 'Preeti',
+      email: "preeti@abc.com",
+      password: bcrypt.hashSync("myPassword", 10)
+    },
+    {
+      name: 'Random',
+      email: "random@abc.com",
+      password: bcrypt.hashSync("random456", 10)
+    }
+  ],
   books: [
     {
       id: 1,
       name: 'Wings of Fire',
       price: 800,
+      originalPrice: 1000,
       url: '/assets/wings.jpeg',
       author: 'APJ Abdul Kalam',
       rating: 4.5,
@@ -11,11 +26,11 @@ const products = {
       description: 'Wings of Fire is an autography of APJ Abdul Kalam covering his early life and his work in Indian space research and missile programs. It is the story of a boy from a humble background who went on to become a key player in Indian space research/Indian missile programs and later became the president of India.',
       countAvailable: 2,
       category: 'Biography',
-      originalPrice: 1000
     },
     {
       id: 2,
       name: 'The Fault in Our Stars',
+      price: 360,
       originalPrice: 390,
       url: '/assets/The_Fault_in_Our_Stars.jpg',
       author: 'John Green',
@@ -26,7 +41,7 @@ const products = {
       category: 'Fiction'
     },
     {
-      id: 1,
+      id: 3,
       name: 'The Pilgrimage',
       originalPrice: 900,
       url: '/assets/pilgrimage.jpg',
@@ -39,66 +54,84 @@ const products = {
       price: 600,
     },
     {
-      id: 2,
-      name: 'The Fault in Our Stars',
+      id: 4,
+      name: 'A Visit from the Goon Squad',
       originalPrice: 390,
-      url: '/assets/The_Fault_in_Our_Stars.jpg',
-      author: 'John Green',
+      url: '/assets/goon-squad.jpg',
+      author: 'Jennifer Egan',
       rating: 4,
       numOfReview: 190,
-      description: 'The Fault In Our Stars is a fabulous book about a young teenage girl who has been diagnosed with lung cancer and attends a cancer support group. ... Hazel and Augustus embark on a roller coaster ride of emotions, including love, sadness and romance, while searching for the author of their favourite book.',
+      description: 'A 2011 Pulitzer Prize-winning work of fiction by American author Jennifer Egan. The book is a set of thirteen interrelated stories with a large set of characters all connected to Bennie Salazar, a record company executive, and his assistant, Sasha. The book centers on the mostly self-destructive characters, who, as they grow older, are sent in unforeseen, and sometimes unusual, directions by life. ',
       countAvailable: 3,
-      category: 'Fiction'
+      category: 'Fiction',
+      price: 500,
     },
     {
-      id: 1,
-      name: 'Wings of Fire',
+      id: 5,
+      name: "And Then There Were None",
       originalPrice: 400,
-      url: '/assets/wings.jpeg',
-      author: 'APJ Abdul Kalam',
-      rating: 4.5,
-      numOfReview: 250,
-      description: 'Wings of Fire is an autography of APJ Abdul Kalam covering his early life and his work in Indian space research and missile programs. It is the story of a boy from a humble background who went on to become a key player in Indian space research/Indian missile programs and later became the president of India.',
-      countAvailable: 4,
-      category: 'Biography',
-    },
-    {
-      id: 2,
-      name: 'The Fault in Our Stars',
-      originalPrice: 390,
-      url: '/assets/The_Fault_in_Our_Stars.jpg',
-      author: 'John Green',
-      rating: 4,
-      numOfReview: 190,
-      description: 'The Fault In Our Stars is a fabulous book about a young teenage girl who has been diagnosed with lung cancer and attends a cancer support group. ... Hazel and Augustus embark on a roller coaster ride of emotions, including love, sadness and romance, while searching for the author of their favourite book.',
+      url: "/assets/none.jpg",
+      author: "Agatha Christie",
+      rating: 4.1,
+      numOfReview: 210,
+      description: "The book is the world's best-selling mystery, and with over 100 million copies sold is one of the best-selling books of all time. The novel has been listed as the sixth best-selling title (any language, including reference works)",
       countAvailable: 5,
-      category: 'Fiction'
+      category: 'Mystery',
+      price: 650,
     },
     {
-      id: 1,
-      name: 'Wings of Fire',
-      originalPrice: 400,
-      url: '/assets/wings.jpeg',
-      author: 'APJ Abdul Kalam',
-      rating: 4.5,
-      numOfReview: 200,
-      description: 'Wings of Fire is an autography of APJ Abdul Kalam covering his early life and his work in Indian space research and missile programs. It is the story of a boy from a humble background who went on to become a key player in Indian space research/Indian missile programs and later became the president of India.',
-      countAvailable: 2,
-      category: 'Biography',
+      id: 6,
+      name: 'The Thousand Autumns of Jacob de Zoet',
+      originalPrice: 360,
+      url: '/assets/autumns.jpg',
+      author: "David Mitchell",
+      rating: 4.2,
+      numOfReview: 250,
+      description: "A historical fiction novel by British author David Mitchell published by Sceptre in 2010.[1] It is set during the Dutch trading concession with Japan in the late 18th-century, during the period of Japanese history known as Sakoku.",
+      countAvailable: 5,
+      category: 'Fiction',
+      price: 700,
     },
     {
-      id: 2,
-      name: 'The Fault in Our Stars',
+      id: 7,
+      name: "The Haunting of Hill House",
+      originalPrice: 250,
+      url: '/assets/haunting.jpg',
+      author: "Shirley Jackson",
+      rating: 4.6,
+      numOfReview: 290,
+      description: "A 1959 gothic horror novel by American author Shirley Jackson. A finalist for the National Book Award and considered one of the best literary ghost stories published during the 20th century,[1] it has been made into two feature films and a play, and is the basis of a Netflix series.",
+      countAvailable: 11,
+      category: "Horror",
+      price: 600,
+    },
+    {
+      id: 8,
+      name: "The Adventures of Sherlock Holmes",
       originalPrice: 390,
-      url: '/assets/The_Fault_in_Our_Stars.jpg',
-      author: 'John Green',
+      url: '/assets/sherlock.jpg',
+      author: "Arthur Conan Doyle",
+      rating: 4.5,
+      numOfReview: 230,
+      description: "It contains the earliest short stories featuring the consulting detective Sherlock Holmes, which had been published in twelve monthly issues of The Strand Magazine from July 1891 to June 1892.",
+      countAvailable: 7,
+      category: 'Mystery',
+      price: 560,
+    },
+    {
+      id: 9,
+      name: "The Testaments",
+      originalPrice: 390,
+      url: "/assets/testaments.png",
+      author: "Margaret Atwood",
       rating: 4,
-      numOfReview: 190,
-      description: 'The Fault In Our Stars is a fabulous book about a young teenage girl who has been diagnosed with lung cancer and attends a cancer support group. ... Hazel and Augustus embark on a roller coaster ride of emotions, including love, sadness and romance, while searching for the author of their favourite book.',
-      countAvailable: 2,
-      category: 'Fiction'
+      numOfReview: 150,
+      description: "It is a sequel to The Handmaid's Tale (1985).[2] The novel is set 15 years after the events of The Handmaid's Tale. It is narrated by Aunt Lydia, a character from the previous novel; Agnes, a young woman living in Gilead; and Daisy, a young woman living in Canada.",
+      countAvailable: 6,
+      category: 'Sci-Fi',
+      price: 570,
     },
   ]
 }
 
-export default products;
+export default data;

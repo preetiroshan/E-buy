@@ -1,17 +1,17 @@
 import React, { useState } from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
-import { FormControl, InputGroup, Button, Container } from "react-bootstrap";
+import { FormControl, InputGroup, Button, Container, Row, Col } from "react-bootstrap";
 // import  Offcanvas  from 'react-bootstrap/Offcanvas';
 import Offcanvas from './Offcanvas'
 import { FaBookReader, FaShoppingCart } from "react-icons/fa";
 import { CgMenuRound } from 'react-icons/cg';
 import styled from "styled-components";
 import "./Header.css";
-import { FaSearch, FaHome } from 'react-icons/fa';
+import { FaSearch, FaHome, FaInfoCircle } from 'react-icons/fa';
 import Search from './Search';
 import { BsChatQuote } from 'react-icons/bs';
-import { FcAbout } from 'react-icons/fc';
+// import { FaAbout } from 'react-icons/fa';
 
 const StyledBrand = styled(Navbar.Brand)`
 font-family: 'Dela Gothic One', cursive;
@@ -36,7 +36,7 @@ const Header = () => {
 				<StyledBrand href="/">
 					<FaBookReader />
 
-					{` `}
+
 					e-buy!
 				</StyledBrand>
 				{/* </Navbar.Collapse> */}
@@ -54,35 +54,20 @@ const Header = () => {
 						</Nav.Link>
 						<Nav.Link href="/login">Logout</Nav.Link>
 						{/* <Nav.Link href="/register">Register</Nav.Link> */}
+						<Nav.Link href="/"><FaHome />{` `}Home</Nav.Link>
+						<Nav.Link href="/about"><FaInfoCircle />{` `}About Us</Nav.Link>
+						<Nav.Link href="/contact"><BsChatQuote />{` `}Contact us</Nav.Link>
 					</Nav>
 				</Navbar.Collapse>
 
-
-				{/* <InputGroup>
-					<FormControl id="inlineFormInputGroup" placeholder="Type here to search.." />
-					<InputGroup.Prepend>
-						<InputGroup.Text>
-							<FaSearch />
-						</InputGroup.Text>
-					</InputGroup.Prepend>
-				</InputGroup> */}
-				<Search />
-				{/* </div> */}
-
-
 			</Navbar>
-			{/* <Container style={{ backgroundColor: '#000000' }}> */}
-			<Nav fill variant="tabs" className="navTabs">
-				<Nav.Item className="navItem">
-					<Nav.Link href="/">Home{` `}<FaHome /></Nav.Link>
-				</Nav.Item>
-				<Nav.Item className="navItem">
-					<Nav.Link href="/about">About Us<FcAbout /></Nav.Link>
-				</Nav.Item>
-				<Nav.Item className="navItem">
-					<Nav.Link href="/contact">Contact us{` `}<BsChatQuote /></Nav.Link>
-				</Nav.Item>
-			</Nav>
+			<Row className="justify-content-center mr-0">
+				{/* <Col md={2}></Col> */}
+				<Col md={8}>
+					<Search />
+				</Col>
+				{/* <Col md={2}></Col> */}
+			</Row>
 		</>
 	);
 };

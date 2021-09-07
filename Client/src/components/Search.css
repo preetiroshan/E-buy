@@ -1,0 +1,13 @@
+.form-control:focus {
+  box-shadow: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li:hover {
+  background-color: #dedfe0;
+}
+
+

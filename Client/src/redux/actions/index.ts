@@ -1,7 +1,8 @@
-import { createAction, createAsyncThunk } from "@reduxjs/toolkit"
-import { TBook } from "../../data";
+import { createAction, createAsyncThunk } from "@reduxjs/toolkit";
+import { TBook } from "../../types";
 import services from "../../services";
 import { TAddToCartFilter, TCartItem } from "../../types";
+import { signInFilter } from "../../userTypes";
 
 const actions = {
   getAllBooks: createAsyncThunk('/products/books/getAllBooks', async() => {
@@ -26,7 +27,7 @@ const actions = {
   // }),
   addToCart: createAsyncThunk('/products/books/addToCart', async(filter: TAddToCartFilter) => {
     const a  = await services.getProducts()
-    const book = a.find((book) => book.id === filter.id)
+    const book = a.find((book: TBook) => book.id === filter.id)
     return {
         book: book || {} as TBook,
         qty: filter.qty
@@ -39,6 +40,20 @@ const actions = {
         //This will pass id as the payload
     }
   }),
+  setSearchText: createAction('/products/books/searchText', function prepare(searchText: string){
+    return {
+        payload : searchText
+        //This will pass searchText as the payload
+    }
+  }),
+  signIn: createAsyncThunk('/products/users/signIn', async (credentials: signInFilter) => {
+    // const response = await services.signIn(credentials);
+    // console.log("ffufdhfhg")
+    // localStorage.setItem('token', response.token)
+    // return response.token
+    return services.signIn(credentials)
+  })
+  // logOut:
 }
 
 export default actions;

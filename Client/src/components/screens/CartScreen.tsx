@@ -27,7 +27,7 @@ const CartScreen = ({ match }: any) => {
       {
         cartItems.length ?
           <Container className="cart">
-            <Row>
+            <Row className="mt-4">
               <Col lg={8}>
                 {
                   cartItems ?
@@ -40,7 +40,7 @@ const CartScreen = ({ match }: any) => {
 
               <Col lg={4}>
                 Subtotal : {cartItems.reduce((a, c) => a + c.qty, 0)} items
-          Total Price: {cartItems.reduce((a, c) => a + (c.qty * c.book.price), 0)}
+                Total Price: {cartItems.reduce((a, c) => a + (c.qty * c.book.price), 0)}
               </Col>
 
               <Button disabled={!cartItems.length} className="btn btn-warning">Proceed To Checkout</Button>

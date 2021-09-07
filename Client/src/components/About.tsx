@@ -1,6 +1,8 @@
 import React from 'react';
 import { Jumbotron, Container } from 'react-bootstrap';
 import './About.css'
+import book2 from './book2.jpg';
+import aboutImage from "../images/about.svg";
 
 const About = () => {
   return (
@@ -9,10 +11,11 @@ const About = () => {
         <Jumbotron className="bg-transparent about-jumbo" fluid>
           <Container>
             <div className="jumbo-content">
-              <h1>
+              <h6>
                 We are a group of software engineers who love reading books!!&#128512;
-              </h1>
+              </h6>
             </div>
+            <img src={aboutImage} alt="hey"></img>
           </Container>
         </Jumbotron>
       </div>

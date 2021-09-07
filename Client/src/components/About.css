@@ -1,14 +1,14 @@
 .bg {
   /* The image used */
-  background-image: url("./book2.jpg");
+  background-image: url("../images/about.svg");
 
   /* Full height */
-  height: 100vh;
+  /* height: 100vh; */
 
   /* Center and scale the image nicely */
   background-position: top center;
   background-repeat: no-repeat;
-  background-size: cover;
+  /* background-size: cover; */
   overflow: hidden;
   /* position: relative; */
   opacity: 0.8;
@@ -16,7 +16,7 @@
 
 .about {
   /* position: absolute; */
-  height: 100%;
+  /* height: 100%; */
   /* color: white; */
   width: 40%;
   display: flex;
@@ -37,6 +37,7 @@
     rgba(247, 239, 239, 0.919)
   )  !important */
   /* background-color: rgb(111, 111, 116) !important ; */
-  color: white;
+  /* color: white; */
+   color: black;
   font-size: 2rem;
 }

@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { TBook } from '../../data';
+import { TBook } from '../../types';
 import { TCartItem } from '../../types';
 import actions from '../actions';
 import Cookie from 'js-cookie';

@@ -18,7 +18,7 @@ const HomeCarousel = () => {
         />
         <Carousel.Caption className="h6">
           <b>FLAT 20% OFF</b>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          <p>On the latest National Bestsellers! Hurry up!</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>

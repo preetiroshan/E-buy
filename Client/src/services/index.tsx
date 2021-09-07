@@ -1,4 +1,5 @@
-import { TBook } from "../data";
+import { TBook } from "../types";
+import { signInFilter, TSignInResponse } from '../userTypes';
 
 const services = {
   getProducts(): Promise<TBook[]> {
@@ -16,5 +17,15 @@ const services = {
   //   return fetch(`/api/cart/books/${filter.id}/${filter.qty}`)
   //     .then((res) => res.json())
   // },
+  signIn(credentials: signInFilter): Promise<TSignInResponse> {
+    return fetch('/api/users/signin', {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json'
+      },
+      body: JSON.stringify(credentials)
+    })
+      .then((res) => res.json())
+  }
 }
 export default services;

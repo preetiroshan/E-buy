@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { TBook } from '../../data';
+import { TBook } from '../../types';
 import actions from '../actions';
 
 export type TBookState = {
