@@ -51,7 +51,6 @@ const Register = () => {
 											<Form.Control
 												type="text"
 												name="firstName"
-												// placeholder="Username"
 												value={values.firstName}
 												onChange={handleChange}
 												isInvalid={touched.firstName && !!errors.firstName}

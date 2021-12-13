@@ -13,14 +13,21 @@ li {
   margin-bottom: 50px;
 }
 
-li:hover {
+.sideNav li:hover {
+  color: black;
   background-color: inherit;
+  text-decoration: none;
 }
 .sideNav a {
   text-decoration: none;
   color: black;
   font-weight: bold;
-  /* margin-bottom: ; */
+}
+
+.sideNav a:hover{
+  color: black;
+  background-color: inherit;
+  text-decoration: none;
 }
 
 .sideNav a img {

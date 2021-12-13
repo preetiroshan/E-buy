@@ -33,9 +33,6 @@ const Contact = () => {
                     <Form.Label>Message</Form.Label>
                     <Form.Control as="textarea" rows={3} />
                   </Form.Group>
-                  {/* <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                    <Form.Check type="checkbox" label="Check me out" />
-                  </Form.Group> */}
                   <Button variant="primary" type="submit">
                     Send Message
                 </Button>

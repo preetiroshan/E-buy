@@ -3,7 +3,7 @@ import { Container, Jumbotron, Form, Col, Button } from "react-bootstrap";
 import { Formik } from "formik";
 import * as yup from "yup";
 import { useDispatch } from "react-redux";
-import actions from "../redux/actions";
+import actions from "../../../redux/actions";
 
 const Login = () => {
 	const schema = yup.object().shape({
@@ -55,7 +55,6 @@ const Login = () => {
 											<Form.Label>Email</Form.Label>
 											<Form.Control
 												type="email"
-												// placeholder=""
 												name="email"
 												value={values.email}
 												onChange={handleChange}
@@ -83,22 +82,13 @@ const Login = () => {
 											</Form.Control.Feedback>
 										</Form.Group>
 										<div className="d-flex flex-column align-items-center">
-											{/* <div> */}
 											<Button type="submit">Login</Button>
-											{/* <Button
-												type="submit"
-												variant="light"
-												onClick={handleSubmit}
-											>
-												Sign in with <FcGoogle />
-											</Button> */}
 											<br />
 											<br />
 											Don't have an account?
 											<Button type="submit" onClick={handleSubmit}>
 												Sign Up
 											</Button>
-											{/* </div> */}
 										</div>
 									</Col>
 								</Form>

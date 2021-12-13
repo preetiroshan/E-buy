@@ -1,6 +1,6 @@
 import React from 'react';
 import { CardGroup, Col, Container, Row } from 'react-bootstrap';
-import { TBook } from '../types';
+import { TBook } from '../../types';
 import Book from './Book';
 
 type BooksContainerProps = {

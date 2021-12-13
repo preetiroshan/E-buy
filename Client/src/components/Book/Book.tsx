@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { Card, Col, Button, Row } from 'react-bootstrap';
 import { FcLike } from 'react-icons/fc';
 import Rating from '@material-ui/core/Rating';
-import { TBook } from '../types';
+import { TBook } from '../../types';
 import { Link } from 'react-router-dom'
-import './customStyle.css';
+import '../customStyle.css';
 import Badge from 'react-bootstrap/Badge';
 
 type TBookProps = {
