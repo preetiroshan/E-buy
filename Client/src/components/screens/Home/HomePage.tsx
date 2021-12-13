@@ -1,13 +1,12 @@
 import React, { useEffect, useMemo } from 'react';
 import { Spinner } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
-import { StoreState } from '../../redux/store'
-import { TBookState } from '../../redux/reducers/booksReducer';
-import actions from '../../redux/actions';
-import HomeCarousel from '../HomeCarousel';
-import Home2 from '../Home2';
-import BooksContainer from '../BooksContainer';
-
+import { StoreState } from '../../../redux/store'
+import { TBookState } from '../../../redux/reducers/booksReducer';
+import actions from '../../../redux/actions';
+import HomeCarousel from '../../Home/HomeCarousel';
+import Home from '../../Home/Home';
+import BooksContainer from '../../Book/BooksContainer';
 
 const HomePage = () => {
   const booksList = useSelector<StoreState, TBookState>((state) => state.products.books);
@@ -35,22 +34,11 @@ const HomePage = () => {
         !searchText &&
         <>
           <HomeCarousel />
-          <Home2 />
+          <Home />
         </>
       }
       <BooksContainer books={filteredBooks
         || books} />
-      {/* <Container fluid className="justify-content-center">
-        <Row>
-          {books.map((product: TBook, key) => (
-            <Col xs={12} sm={6} md={4} lg={3}>
-              <CardGroup>
-                <Book key={key} book={product} />
-              </CardGroup>
-            </Col>
-          ))}
-        </Row>
-      </Container> */}
     </div>
   )
 

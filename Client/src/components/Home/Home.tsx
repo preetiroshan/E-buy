@@ -1,8 +1,8 @@
 import React from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
-import './Home2.css';
+import './Home.css';
 
-const Home2 = () => {
+const Home = () => {
   return (
     <div className="home-2">
       <Container className="py-4">
@@ -25,4 +25,4 @@ const Home2 = () => {
   )
 }
 
-export default Home2;
+export default Home;

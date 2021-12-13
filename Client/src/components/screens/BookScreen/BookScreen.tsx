@@ -3,13 +3,13 @@ import { Row, Col, Button, Form, Spinner, Container } from 'react-bootstrap';
 import styled from 'styled-components';
 import Rating from '@material-ui/core/Rating';
 import { useDispatch, useSelector } from 'react-redux';
-import { StoreState } from '../../redux/store';
-import { TBookDetailsState } from '../../redux/reducers/bookDetailsReducer';
-import actions from '../../redux/actions';
+import { StoreState } from '../../../redux/store';
+import { TBookDetailsState } from '../../../redux/reducers/bookDetailsReducer';
+import actions from '../../../redux/actions';
 import { useHistory } from 'react-router';
 
 const StyledContainer = styled(Container)`
- padding: 0 10rem;
+//  padding: 0 10rem;
   font-size: 1.8rem;
   & p {
     font-size: 1rem;

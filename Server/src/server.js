@@ -17,6 +17,7 @@ app.use(express.urlencoded({ extended: true }));
 const PORT = process.env.PORT || 5000;
 
 const connectionString = process.env.MONGODB_URL || 'mongodb+srv://dbUser:HellodbUser@ebuy-cluster.4psre.mongodb.net/ebuydb'
+
 mongoose.connect(connectionString, {
   useNewUrlParser: true,
   useUnifiedTopology: true,

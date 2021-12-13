@@ -2,8 +2,8 @@ import React, { useCallback } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
 import styled from 'styled-components';
-import actions from '../redux/actions';
-import { TCartItem } from '../types'
+import actions from '../../redux/actions';
+import { TCartItem } from '../../types'
 
 type TCartItemProps = {
   item: TCartItem;
