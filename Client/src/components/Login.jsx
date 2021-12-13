@@ -1,25 +1,11 @@
-import React, { useState } from "react";
-import {
-	Container,
-	Jumbotron,
-	Form,
-	Col,
-	InputGroup,
-	Button,
-} from "react-bootstrap";
+import React from "react";
+import { Container, Jumbotron, Form, Col, Button } from "react-bootstrap";
 import { Formik } from "formik";
 import * as yup from "yup";
-import { FcGoogle } from "react-icons/fc";
 import { useDispatch } from "react-redux";
 import actions from "../redux/actions";
 
 const Login = () => {
-	const [firstName, setFirstName] = useState("");
-	const [lastName, setLastName] = useState("");
-	const [email, setEmail] = useState("");
-	const [password, setPassword] = useState("");
-	const [password2, setPassword2] = useState("");
-
 	const schema = yup.object().shape({
 		firstName: yup.string().required(),
 		lastName: yup.string().required(),
@@ -30,6 +16,7 @@ const Login = () => {
 
 	const dispatch = useDispatch();
 	const handleSubmit = () => {
+		console.log("submit called");
 		dispatch(
 			actions.signIn({
 				email: "abc@abc.com",
@@ -50,16 +37,11 @@ const Login = () => {
 								email: "",
 								password: "",
 							}}
-							// onSubmit={(values, { setSubmitting, resetForm }) => {
-							onSubmit={() => {
-								handleSubmit();
-								console.log("hi");
-								// resetForm();
-							}}
+							onSubmit={handleSubmit}
 						>
 							{({
-								handleSubmit,
 								handleChange,
+								handleSubmit,
 								handleBlur,
 								handleReset,
 								values,
@@ -103,7 +85,6 @@ const Login = () => {
 										<div className="d-flex flex-column align-items-center">
 											{/* <div> */}
 											<Button type="submit">Login</Button>
-											or
 											{/* <Button
 												type="submit"
 												variant="light"
@@ -114,9 +95,9 @@ const Login = () => {
 											<br />
 											<br />
 											Don't have an account?
-											{/* <Button type="submit" onClick={handleSubmit}>
+											<Button type="submit" onClick={handleSubmit}>
 												Sign Up
-											</Button> */}
+											</Button>
 											{/* </div> */}
 										</div>
 									</Col>

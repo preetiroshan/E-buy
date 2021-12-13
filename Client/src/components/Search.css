@@ -10,4 +10,10 @@ li:hover {
   background-color: #dedfe0;
 }
 
+#search-icon {
+  max-height: 38px;
+}
 
+.search-form {
+  min-width: 75%;
+}

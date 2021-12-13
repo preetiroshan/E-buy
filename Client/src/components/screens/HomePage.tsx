@@ -1,15 +1,11 @@
-import React, { useEffect, useMemo, useState } from 'react';
-import { Row, Container, Spinner } from 'react-bootstrap';
-// import { TBook } from '../../types';
-import Book from '../Book';
+import React, { useEffect, useMemo } from 'react';
+import { Spinner } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { StoreState } from '../../redux/store'
 import { TBookState } from '../../redux/reducers/booksReducer';
 import actions from '../../redux/actions';
 import HomeCarousel from '../HomeCarousel';
 import Home2 from '../Home2';
-import CardGroup from 'react-bootstrap/CardGroup';
-import { Col } from 'react-bootstrap';
 import BooksContainer from '../BooksContainer';
 
 

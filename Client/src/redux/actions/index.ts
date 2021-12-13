@@ -1,7 +1,7 @@
 import { createAction, createAsyncThunk } from "@reduxjs/toolkit";
 import { TBook } from "../../types";
 import services from "../../services";
-import { TAddToCartFilter, TCartItem } from "../../types";
+import { TAddToCartFilter } from "../../types";
 import { signInFilter } from "../../userTypes";
 
 const actions = {
@@ -51,6 +51,7 @@ const actions = {
     // console.log("ffufdhfhg")
     // localStorage.setItem('token', response.token)
     // return response.token
+    console.log("service called")
     return services.signIn(credentials)
   })
   // logOut:

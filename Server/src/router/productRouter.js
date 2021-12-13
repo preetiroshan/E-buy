@@ -16,13 +16,13 @@ productRouter.get('/seed', expressAsyncHandler(async (req, res) => {
   res.send({ createdProducts })
 }))
 
-productRouter.get('/books/:name', expressAsyncHandler(async (req, res) => {
-  const bookName = req.params.name;
-  const book = await Product.find({
-    name: { "$regex": replace(/\s/g, '') }
+productRouter.get('/books/:id', expressAsyncHandler(async (req, res) => {
+  const bookId = req.params.id;
+  const book = await Product.findOne({
+    _id: bookId
 
   })
-  book.length ? res.send(book) : res.status(404).send({ message: "Product not Found" })
+  book.id ? res.send(book) : res.status(404).send({ message: "Product not Found" })
 }))
 
 export default productRouter;

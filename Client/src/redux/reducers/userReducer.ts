@@ -1,5 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { TBook } from '../../types';
 import { TSignInResponse } from '../../userTypes';
 import actions from '../actions';
 

@@ -1,17 +1,14 @@
-import React, { ChangeEvent, useCallback, useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { InputGroup, FormControl, Form } from 'react-bootstrap';
 import { FaSearch } from 'react-icons/fa';
 import { useDispatch, useSelector } from 'react-redux';
-import { useHistory, useLocation } from 'react-router';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import actions from '../redux/actions';
 import { TBookState } from '../redux/reducers/booksReducer';
-import { SearchState } from '../redux/reducers/searchReducer';
 import { StoreState } from '../redux/store';
 import { TBook } from '../types';
 import './Search.css';
-import { FocusEvent } from 'react'
 
 const StyledDiv = styled.div`
     position: absolute;
@@ -25,18 +22,15 @@ const StyledDiv = styled.div`
     }
   `;
 const Search = () => {
-  const history = useHistory();
   const dispatch = useDispatch()
-  const location = useLocation();
   const [suggestions, setSuggestions] = useState<TBook[]>([])
   const booksList = useSelector<StoreState, TBookState>((state) => state.products.books);
   const searchText = useSelector<StoreState, string>((state) => state.products.search.searchText);
   const [searchString, setSearchString] = useState('')
+
   const handleChange = useCallback(
     (e) => {
       setSearchString(e.target.value)
-      let newSearch = e.target.value;
-      let matches = [];
       let suggestion = e.target.value && booksList.books.filter((book) => (book.name.toLowerCase().includes(e.target.value.toLowerCase())));
       setSuggestions(suggestion)
 
@@ -49,16 +43,14 @@ const Search = () => {
       e.preventDefault();
       dispatch(actions.setSearchText(searchString))
       setSuggestions([])
-      // location.pathname = `/books/search/q=${searchText}`
 
     },
     [dispatch, searchString])
   console.log(suggestions)
-  // console.log(search);
 
   console.log("searchText is", searchText)
   return (
-    <>
+    <div className="search-form">
       <Form onSubmit={handleSearch}>
 
         <InputGroup>
@@ -75,34 +67,39 @@ const Search = () => {
           {/* <Link to={`/`}> */}
           {/* <button type="submit" onSub> */}
 
-          <button type="submit">
-            <InputGroup.Prepend>
-              <InputGroup.Text>
-                <FaSearch />
-              </InputGroup.Text>
-            </InputGroup.Prepend>
-            {/* </button> */}
+          {/* <button type="submit"> */}
+          <InputGroup.Prepend>
+            {/* <InputGroup.Text> */}
+            {/* <FaSearch /> */}
+            <img src="/assets/search.png" alt="search" id="search-icon" />
+            {/* </InputGroup.Text> */}
+          </InputGroup.Prepend>
 
-            {/* </Link> */}
-          </button>
+          {/* </button> */}
         </InputGroup>
       </Form>
       {
-        !(suggestions.length === 0) &&
+        (suggestions.length !== 0) &&
         <StyledDiv>
           <ul>
 
             {
               suggestions.map((book: TBook, key: number) =>
-                <li>{book.name}</li>
+                <li>
+                  <NavLink to={{
+                    pathname: `/book/${book.name.replace(/\s/g, '')}`,
+                    state: {
+                      id: book._id
+                    }
+                  }} onClick={() => { dispatch(actions.setSearchText('')) }} >{book.name}</NavLink>
+                </li>
               )
             }
           </ul>
         </StyledDiv>
-        // (<StyledDiv key={key}>{book.name}</StyledDiv>)
 
       }
-    </>
+    </div>
   )
 }
 

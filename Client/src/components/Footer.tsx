@@ -1,5 +1,5 @@
 import React from 'react';
-import { Col, Container, Row } from 'react-bootstrap';
+import { Col, Row } from 'react-bootstrap';
 import { FaFacebookSquare, FaInstagram, FaTwitter, FaTelegramPlane } from 'react-icons/fa'
 import './customStyle.css';
 
@@ -15,20 +15,14 @@ const Footer = () => {
           </Row>
 
           <Row className="">
-            <ul className="useful-links d-flex flex-column align-items-start pl-0">
+            <ul className="useful-links d-flex flex-column align-items-start pl-0 mt-4">
               <li>Support</li>
               <li>Careers</li>
               <li>FAQs</li>
               <li>Blogs</li>
-              {/* <li></li> */}
             </ul>
           </Row>
         </Col>
-        {/* <Col>
-          <h5 >
-            All rights reserved. | Copyright &copy; 2021
-            </h5>
-        </Col> */}
         <Col sm={6}>
           <Row>
             <h5>

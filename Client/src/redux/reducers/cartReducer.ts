@@ -1,5 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { TBook } from '../../types';
 import { TCartItem } from '../../types';
 import actions from '../actions';
 import Cookie from 'js-cookie';
@@ -26,9 +25,6 @@ const cartReducer = createSlice({
   reducers: {},
   extraReducers: builder => {
     builder.addCase(actions.addToCart.pending, (state) => {
-      // const new = [...state.cartItems, payload]
-      // state.cartItems = state.cartItems.concat(payload)
-      // state.num += payload.qty
       state.isLoading = true
     })
     builder.addCase(actions.addToCart.fulfilled, (state, { payload }) => {
@@ -36,10 +32,6 @@ const cartReducer = createSlice({
         item.book.id === payload.book.id
       )
       if(existingProduct){
-        const modifiedItem = {
-          book: payload.book,
-          qty: payload.qty + existingProduct.qty
-        }
         state.cartItems = state.cartItems.map((item) => item.book.id === payload.book.id ? payload : item)
       }
       else{

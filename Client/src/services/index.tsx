@@ -18,12 +18,13 @@ const services = {
   //     .then((res) => res.json())
   // },
   signIn(credentials: signInFilter): Promise<TSignInResponse> {
+    console.log("service called")
     return fetch('/api/users/signin', {
       method: 'POST',
       headers: {
-        'Content-type': 'application/json'
+        'Content-Type': 'application/json'
       },
-      body: JSON.stringify(credentials)
+      body: JSON.stringify(credentials),
     })
       .then((res) => res.json())
   }

@@ -11,9 +11,10 @@ type TBookProps = {
   book: TBook;
 }
 const Book = ({ book }: TBookProps) => {
-  const { url, author, id, price, rating, numOfReview, name, originalPrice } = book;
+  const { url, author, _id, price, rating, numOfReview, name, originalPrice } = book;
   const discount = Math.round(((originalPrice - price) * 100) / originalPrice);
   const [showDetails, setShowDetails] = useState<boolean>(false);
+
   return (
     <Card
       className="book m-4 text-center"
@@ -31,7 +32,14 @@ const Book = ({ book }: TBookProps) => {
       </div>
       <Card.Body>
         <Card.Title style={{ height: '3rem', display: 'flex', alignItems: 'center', justifyContent: 'center' }} >
-          <Link className="text-center" to={`/book/${name.replace(/\s/g, '')}`}>{name}</Link>
+          <Link className="text-center" to={
+            {
+              pathname: `/book/${name.replace(/\s/g, '')}`,
+              state: {
+                id: _id
+              }
+            }
+          }>{name}</Link>
         </Card.Title>
       </Card.Body>
       <Card.Footer>

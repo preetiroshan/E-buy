@@ -1,5 +1,4 @@
 import React, { useCallback, useEffect, useState } from 'react'
-import { TBook } from '../../types';
 import { Row, Col, Button, Form, Spinner, Container } from 'react-bootstrap';
 import styled from 'styled-components';
 import Rating from '@material-ui/core/Rating';
@@ -7,10 +6,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { StoreState } from '../../redux/store';
 import { TBookDetailsState } from '../../redux/reducers/bookDetailsReducer';
 import actions from '../../redux/actions';
-import { TAddToCartFilter } from '../../types';
 import { useHistory } from 'react-router';
 
 const StyledContainer = styled(Container)`
+ padding: 0 10rem;
   font-size: 1.8rem;
   & p {
     font-size: 1rem;
@@ -20,18 +19,19 @@ const StyledContainer = styled(Container)`
   }
 `
 
-const BookScreen = ({ match }: any) => {
-  const bookName = match.params.name;
+const BookScreen = ({ match, location }: any) => {
   const [quantity, setQuantity] = useState<number>(1)
   const booksDetails = useSelector<StoreState, TBookDetailsState>((state) => state.products.bookDetails)
   const { isLoading, book, error } = booksDetails;
   const dispatch = useDispatch();
+  console.log("id is", location.state.id)
   useEffect(() => {
-    dispatch(actions.getBookDetails(bookName))
+    dispatch(actions.setSearchText(""))
+    dispatch(actions.getBookDetails(location.state.id))
     return () => {
       dispatch(actions.clearAllBooks())
     }
-  }, [dispatch, bookName]);
+  }, [dispatch, location]);
   const history = useHistory();
 
   const addToCart = useCallback((book, qty) => {
@@ -39,6 +39,7 @@ const BookScreen = ({ match }: any) => {
     history.push(`/cart?id=${book.id}&qty=${qty}`)
 
   }, [history])
+  console.log("book is", book)
   return (
     <>
       { isLoading && <Spinner animation="border" role="status">
@@ -46,22 +47,27 @@ const BookScreen = ({ match }: any) => {
       </Spinner>}
       {error && <b>Error occurred</b>}
       {
-        book &&
+        book.id &&
         <StyledContainer>
           <Row>
-            <Col>
-              <img className="p-4" src={book.url} alt={book.name} />
+            <Col md={6}>
+              <img className="book" src={book.url} alt={book.name} />
             </Col>
-            <Col>
+            <Col md={6}>
               <div>
                 {book.name}
                 <p className="m-1">{book.author}</p>
               &#8377;{book.price}
+                <br />
+                <small className="text-muted"><del>
+                  {book.originalPrice}
+                </del>
+                </small>
                 <div className="d-flex flex-row align-items-center">
                   <Rating name="read-only" value={book.rating || 0} readOnly />
                   <h6>{`${book.numOfReview} Reviews`}</h6>
                 </div>
-                <p className="h6">{book.description}</p>
+                <p className="text-muted">{book.description}</p>
                 {book.countAvailable > 0 ?
                   <h6 className="text-success">
                     In Stock

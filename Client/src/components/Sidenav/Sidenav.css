@@ -1,0 +1,33 @@
+#sideNavMenu {
+  height: 100%;
+  width: 0;
+  overflow-x: hidden;
+  position: fixed;
+  z-index: 20;
+  transition: 0.5s;
+  background-image: linear-gradient(to right bottom, #ff6f00, #f56d0c, #fc8124, #f5882f, #f7b17c);
+  color: white
+}
+
+li {
+  margin-bottom: 50px;
+}
+
+li:hover {
+  background-color: inherit;
+}
+.sideNav a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  /* margin-bottom: ; */
+}
+
+.sideNav a img {
+  max-height: 30px;
+}
+
+#close-btn {
+  font-size: 40px;
+  cursor: pointer;
+}

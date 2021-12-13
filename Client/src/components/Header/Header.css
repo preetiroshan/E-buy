@@ -1,5 +1,9 @@
-.navbar, .navbar-dark .navbar-nav a.nav-link{
-  color: rgba(255,255,255,1);
+.navbar, .navbar-dark .navbar-nav a.nav-link {
+  /* color: black */
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: black
 }
 
 .navbar-dark .navbar-nav a.nav-link:hover{
@@ -9,16 +13,16 @@
   background-color: black;
   width : 100%
 }
-.navbar-dark .navbar-toggler {
-  border: none;
-  font-size: 2rem;
-  padding-left: 0;
-  /* width : 100% */
-}
 
 .header-nav {
-  background-color: black;
-  box-shadow: 0 20px 20px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 20px 20px 0 rgba(0,0,0,0.1);
+  margin: 0 0 4rem;
+  color: black;
+  padding: 2rem 4rem
+}
+
+.header-nav img {
+  max-height: 30px;
 }
 
 .form-control:focus {
@@ -26,12 +30,22 @@
   box-shadow: none;
 }
 
+@media screen and (max-width: 578px) {
+  .nav-icon {
+    display: none;
+  }
+
+  .menu-icon {
+    margin-bottom: 1rem;
+  }
+}
+/*
 @media screen and (max-width:767px){
   .show {
     background-color: rgb(51, 47, 51);
     border-radius: 2%;
   }
-}
+} */
 
 
 /* .navbar-collapse.collapsing {
@@ -80,3 +94,7 @@
 .navTabs {
   /* border: none */
 }
+/*
+img {
+  max-height: 40px;
+} */

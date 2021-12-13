@@ -13,7 +13,8 @@ const Contact = () => {
             <Col md={6}>
 
               <Container className="d-flex flex-column contact-container align-items-center">
-                <h3 className="pt-4">We would love to hear from you! <FcFeedback /></h3>
+                <h3 className="pt-4 d-flex jutify-content-center"><span>
+                  We would love to hear from you! <FcFeedback /></span></h3>
                 <Form className="contact-form">
                   <Form.Group className="mb-3">
                     <Form.Label>Email address</Form.Label>
@@ -44,7 +45,7 @@ const Contact = () => {
           </Row>
         </Container>
       </Jumbotron>
-    </div>
+    </div >
   )
 }
 
