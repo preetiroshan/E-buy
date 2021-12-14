@@ -6,7 +6,8 @@
   z-index: 20;
   transition: 0.5s;
   background-image: linear-gradient(to right bottom, #ff6f00, #f56d0c, #fc8124, #f5882f, #f7b17c);
-  color: white
+  color: black;
+  font-weight: bold;
 }
 
 li {

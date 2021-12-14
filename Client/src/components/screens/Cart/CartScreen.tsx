@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { Button, Col, Container, Row } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation } from 'react-router';
-import actions from '../../../redux/actions';
+import actions from '../../../redux/actions/products/productActions';
 import { TCartState } from '../../../redux/reducers/cartReducer';
 import { StoreState } from '../../../redux/store';
 import { TAddToCartFilter } from '../../../types';

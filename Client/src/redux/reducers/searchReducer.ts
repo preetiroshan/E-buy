@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import actions from '../actions';
+import actions from '../actions/products/productActions';
 
 export type SearchState = {
   searchText: string;

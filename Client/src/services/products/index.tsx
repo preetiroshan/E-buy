@@ -1,5 +1,6 @@
-import { TBook } from "../types";
-import { signInFilter, TSignInResponse } from '../userTypes';
+
+import { TBook } from "../../types";
+import { signInFilter, TSignInResponse } from "../../userTypes";
 
 const services = {
   getProducts(): Promise<TBook[]> {

@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { TBook } from '../../types';
-import actions from '../actions';
+import actions from '../actions/products/productActions';
 
 export type TBookState = {
   isLoading: boolean;

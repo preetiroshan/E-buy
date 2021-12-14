@@ -3,7 +3,7 @@ import { Spinner } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { StoreState } from '../../../redux/store'
 import { TBookState } from '../../../redux/reducers/booksReducer';
-import actions from '../../../redux/actions';
+import actions from '../../../redux/actions/products/productActions';
 import HomeCarousel from '../../Home/HomeCarousel';
 import Home from '../../Home/Home';
 import BooksContainer from '../../Book/BooksContainer';

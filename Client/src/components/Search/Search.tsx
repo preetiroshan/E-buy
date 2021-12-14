@@ -3,7 +3,7 @@ import { InputGroup, FormControl, Form } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
-import actions from '../../redux/actions';
+import actions from '../../redux/actions/products/productActions';
 import { TBookState } from '../../redux/reducers/booksReducer';
 import { StoreState } from '../../redux/store';
 import { TBook } from '../../types';
