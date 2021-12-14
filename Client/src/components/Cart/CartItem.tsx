@@ -2,7 +2,7 @@ import React, { useCallback } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
 import styled from 'styled-components';
-import actions from '../../redux/actions';
+import actions from '../../redux/actions/products/productActions';
 import { TCartItem } from '../../types'
 
 type TCartItemProps = {

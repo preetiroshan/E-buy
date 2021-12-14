@@ -1,8 +1,8 @@
 import { createAction, createAsyncThunk } from "@reduxjs/toolkit";
-import { TBook } from "../../types";
-import services from "../../services";
-import { TAddToCartFilter } from "../../types";
-import { signInFilter } from "../../userTypes";
+import { TBook } from "../../../types";
+import services from "../../../services/products";
+import { TAddToCartFilter } from "../../../types";
+import { signInFilter } from "../../../userTypes";
 
 const actions = {
   getAllBooks: createAsyncThunk('/products/books/getAllBooks', async() => {
@@ -46,7 +46,7 @@ const actions = {
         //This will pass searchText as the payload
     }
   }),
-  signIn: createAsyncThunk('/products/users/signIn', async (credentials: signInFilter) => {
+  signIn: createAsyncThunk('/users/signIn', async (credentials: signInFilter) => {
     // const response = await services.signIn(credentials);
     // console.log("ffufdhfhg")
     // localStorage.setItem('token', response.token)

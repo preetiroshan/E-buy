@@ -4,8 +4,12 @@ import "./Header.css";
 import Sidenav from '../Sidenav/Sidenav';
 import CartIcon from './CartIcon'
 import Search from "../Search/Search";
+import { useDispatch, useSelector } from "react-redux";
+import { StoreState } from '../../redux/store'
+import { TUserState } from "../../redux/reducers/users/signin/signInReducer";
 
 const Header = () => {
+	const { signInData } = useSelector<StoreState, TUserState>((state) => state.user.signIn);
 	const openMenu = () => {
 		if (document.getElementById("sideNavMenu") !== null) {
 			(document.getElementById("sideNavMenu")!.style.width = '60%');
@@ -23,7 +27,7 @@ const Header = () => {
 
 	return (
 		<>
-			<Sidenav closeMenu={closeMenu} />
+			<Sidenav closeMenu={closeMenu} signInData={signInData} />
 			<Row className="header-nav">
 				<Col md={2} xs={12} sm={3}>
 					<Row>
