@@ -9,7 +9,7 @@ type BooksContainerProps = {
 
 const BooksContainer = ({ books }: BooksContainerProps) => {
   return (
-    <Container fluid className="px-4 my-4 justify-content-center">
+    <Container fluid className="px-4 my-4 justify-content-center" id="bookContainer">
       <Row>
         <Col md={2}></Col>
         <Col md={8} lg={8}>

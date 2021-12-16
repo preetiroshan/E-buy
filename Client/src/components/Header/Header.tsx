@@ -29,7 +29,7 @@ const Header = () => {
 		<>
 			<Sidenav closeMenu={closeMenu} signInData={signInData} />
 			<Row className="header-nav">
-				<Col md={2} xs={12} sm={3}>
+				<Col md={2} xs={2} sm={3}>
 					<Row>
 						<img src="/assets/icon-menu.svg" alt="menu-icon" onClick={openMenu} />
 						<a href="/"><img src="/assets/ebuy.png" alt="logo" className="menu-icon" /></a>

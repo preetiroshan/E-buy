@@ -1,0 +1,13 @@
+.add-cart-btn {
+    /* max-height: 10rem; */
+    /* width: auto
+     */
+    max-width: 20rem;
+    min-width: 15rem;
+}
+
+.add-cart-btn:hover {}
+
+.add-cart-btn img {
+    max-height: 30px;
+}

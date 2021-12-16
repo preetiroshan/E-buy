@@ -28,12 +28,12 @@ const HomePage = () => {
   console.log(filteredBooks)
   return (
     <div>
-      { isLoading && <Spinner animation="border" variant="dark" />}
+      { isLoading && <Spinner animation="grow" variant="info" />}
       {error && <b>Error occurred</b>}
       {
         !searchText &&
         <>
-          <HomeCarousel />
+          {/* <HomeCarousel /> */}
           <Home />
         </>
       }

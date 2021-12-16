@@ -19,15 +19,16 @@ const Book = ({ book }: TBookProps) => {
     <Card
       className="book m-4 text-center"
 
-      onMouseOver={() => setShowDetails(true)}
+      // onMouseOver={() => setShowDetails(true)}
       onMouseLeave={() => setShowDetails(false)}
     >
       <div>
         <Card.Img
+          loading="lazy"
           variant="top"
           alt={`${name.length}`}
           src={url}
-          style={{ height: '15rem' }}
+        // style={{ height: '15rem' }}
         />
       </div>
       <Card.Body>
@@ -45,6 +46,11 @@ const Book = ({ book }: TBookProps) => {
       <Card.Footer>
 
         <Card.Subtitle className="mb-2 text-muted" style={{ height: 'max-content' }}>{author}</Card.Subtitle>
+        <b className="text-success mx-2">{price}</b>
+        <b className={discount ? "original-price" : "none"}>&#8377;{originalPrice}</b>{` `}
+        <Badge pill variant="warning">
+          {price ? (originalPrice === price ? null : `Save ${discount}%`) : null}
+        </Badge>
       </Card.Footer>
       {
         showDetails &&
@@ -71,9 +77,10 @@ const Book = ({ book }: TBookProps) => {
 
           </Card.Footer>
           <Card.Footer>
-            <div className="d-flex justify-content-between m-1">
-              <Card.Link href="#"><FcLike size={20} /></Card.Link>
-              <Link className="text-center" to={`/book/${name.replace(/\s/g, '')}`}><Button size="sm">Buy Now</Button>
+            <div className="d-flex justify-content-between my-1">
+              {/* <Card.Link href="#"><FcLike size={20} /></Card.Link> */}
+              <Link className="text-center" to={`/book/${name.replace(/\s/g, '')}`}>
+                <Button size="sm">Add to Cart</Button>
               </Link>
 
             </div>

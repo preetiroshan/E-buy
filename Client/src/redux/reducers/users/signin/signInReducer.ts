@@ -30,6 +30,7 @@ const signInReducer = createSlice({
       state.isLoading = false
       state.signInData = payload
       Cookie.set("userInfo", JSON.stringify(state.signInData))
+      state.error=null
     })
     builder.addCase(userActions.signIn.rejected, (state) => {
       state.isLoading = false
@@ -39,6 +40,7 @@ const signInReducer = createSlice({
     builder.addCase(userActions.logout, (state) => {
       state.signInData = {} as TSignInResponse;
       Cookie.remove("userInfo")
+      state.error=null
     })
   }
 })

@@ -1,29 +1,30 @@
 .navbar-light .navbar-nav .nav-link {
-  color: black
+    color: black
 }
 
 .header-nav {
-  box-shadow: 0 20px 20px 0 rgba(0,0,0,0.1);
-  margin: 0 0 4rem;
-  color: black;
-  padding: 2rem 4rem
+    box-shadow: 0 0px 20px 0 rgba(0, 0, 0, 0.1);
+    /* margin: 0 0 4rem; */
+    color: black;
+    padding: 2rem 4rem;
+    max-width: 100vw;
+    overflow-x: hidden;
 }
 
 .header-nav img {
-  max-height: 30px;
+    max-height: 30px;
 }
 
 .form-control:focus {
-  border: none;
-  box-shadow: none;
+    border: none;
+    box-shadow: none;
 }
 
 @media screen and (max-width: 578px) {
-  .nav-icon {
-    display: none;
-  }
-
-  .menu-icon {
-    margin-bottom: 1rem;
-  }
+    .nav-icon {
+        display: none;
+    }
+    .menu-icon {
+        margin-bottom: 1rem;
+    }
 }

@@ -4,7 +4,7 @@ import './Home.css';
 
 const Home = () => {
   return (
-    <div className="home-2">
+    <div className="home" id="home">
       <Container className="py-4">
         <Row className="my-2">
           <Col md={6} className="d-flex align-items-center">
@@ -13,7 +13,7 @@ const Home = () => {
               <p>
                 Every Genre that you like
             </p>
-              <Button variant="light">Pick one</Button>
+              <Button variant="light"><a href="#bookContainer">Pick one</a></Button>
             </div>
           </Col>
           <Col md={6} className="d-flex justify-content-end">
