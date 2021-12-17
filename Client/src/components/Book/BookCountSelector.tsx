@@ -27,6 +27,10 @@ const BookCountSelector = ({ id, quantity, handleChange, maxQuantity, handleRemo
       handleChange(count + 1)
       setCount((count) => count + 1)
     }
+    //Alert -TODO
+    else {
+      alert("That;s all in stock")
+    }
   }, [count, handleChange, maxQuantity])
 
   const handleMinus = useCallback(() => {
@@ -38,14 +42,14 @@ const BookCountSelector = ({ id, quantity, handleChange, maxQuantity, handleRemo
   }, [count, handleChange, dispatch, id])
   return (
     <div className="count">
-      <Button variant="light" >
+      <Button variant="light" className="p-1" >
         <StyledCountIcon src="/assets/minus.svg" alt="minus-icon" className="count-img" onClick={handleMinus} />
 
       </Button>
-      <Button variant="light">
+      <Button variant="light" className="py-2">
         {quantity}
       </Button>
-      <Button variant="light">
+      <Button variant="light" className="p-1">
         <StyledCountIcon src="/assets/plus.svg" alt="plus-icon" className="count-img" onClick={handleAdd} />
       </Button>
     </div>

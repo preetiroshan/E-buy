@@ -37,12 +37,12 @@ const CartItem = ({ item }: TCartItemProps) => {
       { book &&
         <>
           <Row className="justify-content-start align-items-start">
-            <Col sm={3}>
+            <Col sm={4}>
               <CartImage alt={book.name} src={book.url} />
 
             </Col>
 
-            <Col sm={5} className="mt-4">
+            <Col sm={10} md={6} className="mt-4">
               <Row>
                 <div className="d-flex-md flex-column align-items-stretch">
                   {book.name}
