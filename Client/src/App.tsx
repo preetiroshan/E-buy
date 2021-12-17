@@ -1,20 +1,19 @@
 import React from 'react';
 import './App.css';
 import Header from './components/Header/Header';
-import Footer from './components/Footer';
-import Login from './components/Login';
-import HomePage from './components/screens/HomePage';
+import Footer from './components/Footer/Footer';
+import Login from './components/screens/Login/Login';
+import HomePage from './components/screens/Home/HomePage';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Register from './components/Register';
-import BookScreen from './components/screens/BookScreen'
-import CartScreen from './components/screens/CartScreen';
-import About from './components/About';
-import Contact from './components/Contact'
+import Register from './components/screens/Register/Register';
+import CartScreen from './components/screens/Cart/CartScreen';
+import About from './components/screens/About/About';
+import Contact from './components/Contact/Contact'
+import BookScreen from './components/screens/BookScreen/BookScreen';
 
 const App = () => {
   return (
     <>
-      {/* <Login /> */}
       <Router>
         <Header />
         <Switch>
@@ -29,7 +28,6 @@ const App = () => {
         <Footer />
       </Router>
     </>
-
   );
 }
 

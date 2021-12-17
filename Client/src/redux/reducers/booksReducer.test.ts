@@ -1,4 +1,4 @@
-import actions from '../actions';
+import actions from '../actions/products/productActions';
 import booksReducer, { TBookState } from './booksReducer';
 
 const initialState: TBookState = {

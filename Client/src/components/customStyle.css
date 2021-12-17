@@ -1,54 +1,41 @@
-a:hover {
-  text-decoration: none;
-}
-img{
-  width: 20rem;
-  height: auto;
-}
-.original-price {
-  text-decoration: line-through;
-}
-
-footer {
-  /* clear: both; */
-  /* position: absolute ; */
-  /* bottom: 0; */
-  /* bottom: 0; */
-  /* position: unset; */
-  /* width: c */
-  /* max-width: 100%; */
-  /* height: 100%; */
-  /* margin-top: 200px; */
-  background-color: black;
-  color: white;
-  /* align-items: ; */
-  /* bottom: 0; */
-  /* display: table-row; */
-  /* height: 0 */
-  /* margin-top: 50px; */
-  width: 100%;
-  margin-top: 20vh;
-
-
-}
-
-footer .useful-links {
-  list-style: none;
-  font-size: 0.86rem;
-}
-
-footer .useful-links li {
-  cursor: pointer;
-}
-
-.social-media{
-  font-size: 2rem;;
-}
-
-.book:hover{
-  /* transform: rotate(-5deg);
+    a:hover {
+        text-decoration: none;
+    }
+    
+    img {
+        width: 20rem;
+        height: auto;
+    }
+    
+    .original-price {
+        text-decoration: line-through;
+    }
+    
+    footer {
+        background-color: black;
+        color: white;
+        width: 100%;
+        margin-top: 20vh;
+    }
+    
+    footer .useful-links {
+        list-style: none;
+        font-size: 0.86rem;
+    }
+    
+    footer .useful-links li {
+        cursor: pointer;
+    }
+    
+    .social-media {
+        font-size: 2rem;
+        ;
+    }
+    
+    .book:hover {
+        /* transform: rotate(-5deg);
   transition: transform 10ms ease-in;
   transition-delay: 200ms; */
-  box-shadow: 0 20px 20px 0 rgba(0,0,0,0.2);
-}
-
+        box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.2);
+        transform: scale(1.05);
+    }

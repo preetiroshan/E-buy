@@ -1,8 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { TCartItem } from '../../types';
-import actions from '../actions';
+import actions from '../actions/products/productActions';
 import Cookie from 'js-cookie';
 
+//To get cart items from cookie initially, if they're present
 const cartItems = Cookie.getJSON("cartItems") || [];
 
 export type TCartState = {
