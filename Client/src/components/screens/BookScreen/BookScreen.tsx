@@ -7,6 +7,9 @@ import { StoreState } from '../../../redux/store';
 import { TBookDetailsState } from '../../../redux/reducers/bookDetailsReducer';
 import actions from '../../../redux/actions/products/productActions';
 import { useHistory } from 'react-router';
+import BookCountSelector from '../../Book/BookCountSelector';
+import CartIcon from '../../Header/CartIcon';
+import "./BookScreen.css"
 
 const StyledContainer = styled(Container)`
 //  padding: 0 10rem;
@@ -39,6 +42,7 @@ const BookScreen = ({ match, location }: any) => {
     history.push(`/cart?id=${book.id}&qty=${qty}`)
 
   }, [history])
+
   console.log("book is", book)
   return (
     <>
@@ -73,25 +77,27 @@ const BookScreen = ({ match, location }: any) => {
                     In Stock
                 </h6>
                   :
-                  <h6 className="text-muted">
+                  <h6 className="text-danger">
                     Out of Stock
                 </h6>}
 
                 {
                   (book.countAvailable > 0) &&
                   <>
-                    <Button variant="warning" onClick={() => addToCart(book, quantity)}>Add to Cart</Button>
+                    <Button variant="warning" onClick={() => addToCart(book, quantity)}>
+                      <Row className="add-cart-btn d-flex-md align-items-center justify-content-start">
+                        <Col className="px-0" md={4} sm={5}>
+                          <CartIcon />
+                        </Col>
+                        <Col className="px-0 text-align-start" md={8} sm={7}>
+                          <b> Add to Cart</b>
+                        </Col>
+                      </Row>
+                    </Button>
                     <Form.Group>
-                      <Form.Label className="h6 mr-2">Select Quantity</Form.Label>
-                      <select
-                        value={quantity}
-                        onChange={(e) => setQuantity(parseInt(e.target.value))}
-                        aria-label="Default select example"
-                      >
-                        {Array.from({ length: book.countAvailable }).map((_, idx) => (
-                          <option value={idx + 1} key={idx + 1}>{idx + 1}</option>
-                        ))}
-                      </select>
+                      <BookCountSelector
+                        id={book.id}
+                        maxQuantity={book.countAvailable} handleChange={setQuantity} quantity={quantity} />
                     </Form.Group>
                   </>
                 }
