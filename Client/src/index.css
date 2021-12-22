@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100;400;700&display=swap');
 :root {
-    --primary-orange: hsl(26, 100%, 55%);
+    --primary-orange: #ff7d1a;
     --white: hsl(0, 0%, 100%);
     --pink: #e36e9b;
     --grey-bg: hsl(219, 9%, 45%);
@@ -33,3 +33,9 @@ a:hover {
     color: var(--white) !important;
     border-color: var(--primary-orange) !important;
 }
+
+
+/*
+.menu-icon {
+    border-radius: 50% !important;
+} */

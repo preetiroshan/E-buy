@@ -29,3 +29,10 @@ export type TCartItem = {
   book: TBook;
   qty: number;
 }
+
+export type TAddress = {
+  name: string;
+  addressLine1: string;
+  addressLine2?: string,
+  zipCode: number | string
+}

@@ -40,6 +40,9 @@ const actions = {
         //This will pass id as the payload
     }
   }),
+
+  emptyCart: createAction('/products/books/emptyCart'),
+
   setSearchText: createAction('/products/books/searchText', function prepare(searchText: string){
     return {
         payload : searchText

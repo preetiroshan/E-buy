@@ -52,6 +52,11 @@ const cartReducer = createSlice({
       state.cartItems = state.cartItems.filter((item) => item.book.id !== payload)
       Cookie.set("cartItems", JSON.stringify(state.cartItems))
     })
+
+    builder.addCase(actions.emptyCart , (state) => {
+      state.cartItems = []
+      Cookie.remove("cartItems")
+    })
   }
 })
 
