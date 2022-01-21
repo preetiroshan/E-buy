@@ -27,7 +27,6 @@ const BookScreen = ({ match, location }: any) => {
   const booksDetails = useSelector<StoreState, TBookDetailsState>((state) => state.products.bookDetails)
   const { isLoading, book, error } = booksDetails;
   const dispatch = useDispatch();
-  console.log("id is", location.state.id)
   useEffect(() => {
     dispatch(actions.setSearchText(""))
     dispatch(actions.getBookDetails(location.state.id))
@@ -43,7 +42,6 @@ const BookScreen = ({ match, location }: any) => {
 
   }, [history])
 
-  console.log("book is", book)
   return (
     <>
       { isLoading && <Spinner animation="border" role="status">

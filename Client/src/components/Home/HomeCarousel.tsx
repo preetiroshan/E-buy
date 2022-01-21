@@ -1,10 +1,11 @@
 import React from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import styled from 'styled-components';
+import './HomeCaousel.css'
 
 const StyledCarousel = styled(Carousel)`
- color: blue;
- margin-bottom: 2.5rem
+ color: blue !important;
+ margin-bottom: 2.5rem;
 `
 
 const HomeCarousel = () => {
@@ -18,7 +19,6 @@ const HomeCarousel = () => {
         />
         <Carousel.Caption className="h6">
           <b>FLAT 20% OFF</b>
-          <p>On the latest National Bestsellers! Hurry up!</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
@@ -29,8 +29,7 @@ const HomeCarousel = () => {
         />
 
         <Carousel.Caption>
-          <b>Second slide label</b>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <b>It's NOW OR NEVER!! </b>
         </Carousel.Caption>
       </Carousel.Item>
 
@@ -42,8 +41,7 @@ const HomeCarousel = () => {
         />
 
         <Carousel.Caption>
-          <b>Third slide label</b>
-          <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+          <b>Get, Set, Read!!</b>
         </Carousel.Caption>
       </Carousel.Item>
     </StyledCarousel>

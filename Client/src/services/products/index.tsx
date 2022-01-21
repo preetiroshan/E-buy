@@ -13,13 +13,7 @@ const services = {
       .then((res) => res.json())
   },
 
-  // addToCart(filter: TAddToCartFilter): Promise<TCartItem[]> {
-  //   console.log("add to cart called", filter.id, filter.qty);
-  //   return fetch(`/api/cart/books/${filter.id}/${filter.qty}`)
-  //     .then((res) => res.json())
-  // },
   signIn(credentials: signInFilter): Promise<TSignInResponse> {
-    console.log("service called")
     return fetch('/api/users/signin', {
       method: 'POST',
       headers: {

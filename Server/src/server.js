@@ -23,12 +23,11 @@ mongoose.connect(connectionString, {
         useUnifiedTopology: true,
         useCreateIndex: true
     })
-    // console.log(mongoose.connection.readyState)
 app.use('/api/users', userRouter)
 app.use('/api/products', productRouter);
 
 app.use((err, req, res, next) => {
         res.status(500).send({ message: err.message })
     })
-    
+
 app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));

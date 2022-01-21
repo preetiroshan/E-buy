@@ -20,12 +20,9 @@ const HomePage = () => {
     }
   }, [dispatch])
 
-  console.log(booksList)
   const filteredBooks = useMemo(() => books.filter((book) =>
     book.name.toLowerCase().includes(searchText.toLowerCase())
   ), [books, searchText])
-  console.log(searchText);
-  console.log(filteredBooks)
   return (
     <div>
       { isLoading && <Spinner animation="grow" variant="info" />}
@@ -33,7 +30,7 @@ const HomePage = () => {
       {
         !searchText &&
         <>
-          {/* <HomeCarousel /> */}
+          <HomeCarousel />
           <Home />
         </>
       }

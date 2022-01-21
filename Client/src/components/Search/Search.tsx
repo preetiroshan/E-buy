@@ -45,9 +45,7 @@ const Search = () => {
 
     },
     [dispatch, searchString])
-  console.log(suggestions)
 
-  console.log("searchText is", searchText)
   return (
     <div className="search-form">
       <Form onSubmit={handleSearch}>

@@ -18,16 +18,14 @@ const Login = ({ location }: any) => {
 	// const location = useLocation();
 
 	const history = useHistory();
-	// console.log("hello")
 	useEffect(() => {
-		console.log("already signed in")
-		!(signInData && signInData.name && error) && alert("Invalid Credentials")
-		signInData && signInData.name && history.push(location.state.redirectPath || '/')
+		(!(signInData && signInData.name)) && error && alert("Invalid Credentials")
+		// if()
+		signInData && signInData.name && history.push((location.state && location.state.redirectPath) || '/')
 	}, [signInData, history, location, error])
 
 	const dispatch = useDispatch();
 	const handleSubmit = (values: any) => {
-		console.log("submit called");
 		dispatch(
 			userActions.signIn({
 				email: values.email,
@@ -43,7 +41,9 @@ const Login = ({ location }: any) => {
 	return (
 		<>
 			{ isLoading && <Spinner animation="grow" />}
-			<div className="d-flex flex-row justify-content-center">
+			{
+				!isLoading &&
+				<div className="d-flex flex-row justify-content-center">
 				<Col lg={4} md={6}>
 					<Jumbotron className="my-4" fluid>
 						<Container>
@@ -64,7 +64,6 @@ const Login = ({ location }: any) => {
 									errors,
 								}) => (
 										<Form noValidate onSubmit={handleSubmit}>
-											{/* {console.log("values", values)} */}
 											<Col>
 												<Form.Group as={Col} controlId="validationFormik02">
 													<Form.Label>Email</Form.Label>
@@ -114,6 +113,7 @@ const Login = ({ location }: any) => {
 					</Jumbotron>
 				</Col>
 			</div>
+			}
 		</>
 	);
 };

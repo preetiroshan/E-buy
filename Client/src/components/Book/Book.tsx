@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Card, Col, Button, Row } from 'react-bootstrap';
-import { FcLike } from 'react-icons/fc';
 import Rating from '@material-ui/core/Rating';
 import { TBook } from '../../types';
 import { Link } from 'react-router-dom'
@@ -18,8 +17,6 @@ const Book = ({ book }: TBookProps) => {
   return (
     <Card
       className="book m-4 text-center"
-
-      // onMouseOver={() => setShowDetails(true)}
       onMouseLeave={() => setShowDetails(false)}
     >
       <div>
@@ -28,7 +25,6 @@ const Book = ({ book }: TBookProps) => {
           variant="top"
           alt={`${name.length}`}
           src={url}
-        // style={{ height: '15rem' }}
         />
       </div>
       <Card.Body>
@@ -78,7 +74,6 @@ const Book = ({ book }: TBookProps) => {
           </Card.Footer>
           <Card.Footer>
             <div className="d-flex justify-content-between my-1">
-              {/* <Card.Link href="#"><FcLike size={20} /></Card.Link> */}
               <Link className="text-center" to={`/book/${name.replace(/\s/g, '')}`}>
                 <Button size="sm">Add to Cart</Button>
               </Link>

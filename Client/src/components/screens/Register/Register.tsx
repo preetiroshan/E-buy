@@ -54,7 +54,6 @@ const Register = () => {
 							}) => (
 									<Form noValidate onSubmit={handleSubmit}>
 										<Col>
-											{console.log(errors)}
 											<Form.Group as={Col} controlId="name">
 												<Form.Label>Name</Form.Label>
 												<Form.Control
