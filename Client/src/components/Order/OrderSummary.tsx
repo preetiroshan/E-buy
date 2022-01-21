@@ -51,7 +51,6 @@ const OrderSummary = ({ handleClose, handleShow, show, totalPrice }: TOrderSumma
       <Modal
         show={show}
         onHide={handleFinalClose}
-        backdrop="static"
         keyboard={false}
       >
         {

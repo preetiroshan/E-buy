@@ -34,10 +34,12 @@ const Sidenav = ({ closeMenu, signInData }: TSidenavProps) => {
         </li>
         {
           (signInData?.name) ?
-            <p onClick={handleLogout}>Logout
-            {/* TODO: Change this username from here */}
-              <br /> {signInData.name}
-            </p>
+          <>
+            <li>
+              <p onClick={handleLogout}>Logout</p>
+            </li>
+              <li>{signInData.name}</li>
+          </>
             :
             <li><a href="/login">Login</a></li>
         }
