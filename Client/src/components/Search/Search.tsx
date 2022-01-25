@@ -24,7 +24,7 @@ const Search = () => {
   const dispatch = useDispatch()
   const [suggestions, setSuggestions] = useState<TBook[]>([])
   const booksList = useSelector<StoreState, TBookState>((state) => state.products.books);
-  const searchText = useSelector<StoreState, string>((state) => state.products.search.searchText);
+  // const searchText = useSelector<StoreState, string>((state) => state.products.search.searchText);
   const [searchString, setSearchString] = useState('')
 
   const handleChange = useCallback(

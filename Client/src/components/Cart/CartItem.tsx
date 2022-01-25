@@ -1,10 +1,9 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { Button, Col, Form, Row } from 'react-bootstrap';
+import { Col, Form, Row } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
 import styled from 'styled-components';
 import actions from '../../redux/actions/products/productActions';
-import { TCartItem } from '../../types'
-import Book from '../Book/Book';
+import { TCartItem } from '../../types';
 import BookCountSelector from '../Book/BookCountSelector';
 
 type TCartItemProps = {

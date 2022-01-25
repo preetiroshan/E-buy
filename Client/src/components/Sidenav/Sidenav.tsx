@@ -1,9 +1,7 @@
 import React, { useCallback } from 'react'
 import CartIcon from '../Header/CartIcon'
 import './Sidenav.css';
-import { useDispatch, useSelector } from "react-redux";
-import { StoreState } from '../../redux/store'
-import { TUserState } from "../../redux/reducers/users/signin/signInReducer";
+import { useDispatch } from "react-redux";
 import userActions from '../../redux/actions/user/userActions';
 import { TSignInResponse } from '../../userTypes';
 

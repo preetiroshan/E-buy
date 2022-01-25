@@ -1,7 +1,6 @@
 import React from 'react'
 import { Button, Col, Jumbotron, Row } from 'react-bootstrap'
 import { TCartItem } from '../../types'
-import CheckoutForm from "../Payment/CheckoutForm";
 
 export type TCartSummaryProps = {
   numOfItems: number;

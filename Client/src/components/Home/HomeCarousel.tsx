@@ -18,7 +18,7 @@ const HomeCarousel = () => {
           alt="First slide"
         />
         <Carousel.Caption className="h6">
-          <b>FLAT 20% OFF</b>
+          {/* <b>FLAT 20% OFF</b> */}
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
@@ -29,7 +29,7 @@ const HomeCarousel = () => {
         />
 
         <Carousel.Caption>
-          <b>It's NOW OR NEVER!! </b>
+          {/* <b>It's NOW OR NEVER!! </b> */}
         </Carousel.Caption>
       </Carousel.Item>
 
@@ -41,7 +41,7 @@ const HomeCarousel = () => {
         />
 
         <Carousel.Caption>
-          <b>Get, Set, Read!!</b>
+          {/* <b>Get, Set, Read!!</b> */}
         </Carousel.Caption>
       </Carousel.Item>
     </StyledCarousel>

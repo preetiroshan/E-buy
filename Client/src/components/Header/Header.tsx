@@ -4,7 +4,7 @@ import "./Header.css";
 import Sidenav from '../Sidenav/Sidenav';
 import CartIcon from './CartIcon'
 import Search from "../Search/Search";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { StoreState } from '../../redux/store'
 import { TUserState } from "../../redux/reducers/users/signin/signInReducer";
 
@@ -15,14 +15,12 @@ const Header = () => {
 			(document.getElementById("sideNavMenu")!.style.width = '60%');
 			document.getElementById("sideNavMenu")!.style.maxWidth = '250px';
 		}
-		// document.body.style.backgroundColor = 'var(--grey-bg)';
 	}
 
 	const closeMenu = () => {
 		if (document.getElementById("sideNavMenu") !== null) {
 			(document.getElementById("sideNavMenu")!.style.width = '0');
 		}
-		// document.body.style.backgroundColor = 'var(--grey-bg)';
 	}
 
 	return (

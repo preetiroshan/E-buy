@@ -2,7 +2,6 @@ import React, { useState, useCallback } from 'react';
 import { Button } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
 import styled from 'styled-components';
-import { idText } from 'typescript';
 import actions from '../../redux/actions/products/productActions';
 import './BookCountSelector.css'
 

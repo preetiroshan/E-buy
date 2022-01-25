@@ -23,7 +23,7 @@ const CartScreen = ({ match }: any) => {
   const qty = new URLSearchParams(location.search).get("qty")
   const id = new URLSearchParams(location.search).get("id")
   const cart = useSelector<StoreState, TCartState>((state) => state.products.cart)
-  const { signInData, isLoading, error } = useSelector<StoreState, TUserState>((state) => state.user.signIn);
+  const { signInData } = useSelector<StoreState, TUserState>((state) => state.user.signIn);
   const { cartItems } = cart;
   useEffect(() => {
     const filter: TAddToCartFilter = { id: (id ? parseInt(id) : 0), qty: qty ? parseInt(qty) : 1 }

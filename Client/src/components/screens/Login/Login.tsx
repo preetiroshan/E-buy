@@ -6,7 +6,7 @@ import userActions from "../../../redux/actions/user/userActions";
 import { useDispatch, useSelector } from "react-redux";
 import { StoreState } from '../../../redux/store'
 import { TUserState } from "../../../redux/reducers/users/signin/signInReducer";
-import { Link, useHistory, useLocation } from "react-router-dom"
+import { Link, useHistory } from "react-router-dom"
 import { signInFilter } from "../../../userTypes";
 
 const Login = ({ location }: any) => {
@@ -15,12 +15,10 @@ const Login = ({ location }: any) => {
 		email: yup.string().email("Not a valid email").required(),
 		password: yup.string().required(),
 	});
-	// const location = useLocation();
 
 	const history = useHistory();
 	useEffect(() => {
 		(!(signInData && signInData.name)) && error && alert("Invalid Credentials")
-		// if()
 		signInData && signInData.name && history.push((location.state && location.state.redirectPath) || '/')
 	}, [signInData, history, location, error])
 
