@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { Row, Col, Button, Form, Spinner, Container } from 'react-bootstrap';
 import styled from 'styled-components';
 import Rating from '@material-ui/core/Rating';
@@ -12,22 +12,17 @@ import CartIcon from '../../Header/CartIcon';
 import "./BookScreen.css"
 
 const StyledContainer = styled(Container)`
-//  padding: 0 10rem;
-  font-size: 1.8rem;
-  & p {
-    font-size: 1rem;
-  };
-  & select {
-    font-size: 1rem
+  & p{
+    color: var(--grey)
   }
+
 `
 
-const BookScreen = ({ match, location }: any) => {
+const BookScreen = ({ location }: any) => {
   const [quantity, setQuantity] = useState<number>(1)
   const booksDetails = useSelector<StoreState, TBookDetailsState>((state) => state.products.bookDetails)
   const { isLoading, book, error } = booksDetails;
   const dispatch = useDispatch();
-  console.log("id is", location.state.id)
   useEffect(() => {
     dispatch(actions.setSearchText(""))
     dispatch(actions.getBookDetails(location.state.id))
@@ -43,25 +38,24 @@ const BookScreen = ({ match, location }: any) => {
 
   }, [history])
 
-  console.log("book is", book)
   return (
     <>
-      { isLoading && <Spinner animation="border" role="status">
+      {isLoading && <Spinner animation="border" role="status">
         <span className="sr-only">Loading...</span>
       </Spinner>}
       {error && <b>Error occurred</b>}
       {
         book.id &&
-        <StyledContainer>
-          <Row>
-            <Col md={6}>
+        <StyledContainer className="p-4 d-flex align-items-center book-screen-container">
+          <Row className='mt-4'>
+            <Col sm={4} xs={4} className="mt-4">
               <img className="book" src={book.url} alt={book.name} />
             </Col>
-            <Col md={6}>
+            <Col sm={8} xs={8} className="mt-4">
               <div>
                 {book.name}
                 <p className="m-1">{book.author}</p>
-              &#8377;{book.price}
+                &#8377;{book.price}
                 <br />
                 <small className="text-muted"><del>
                   {book.originalPrice}
@@ -69,17 +63,17 @@ const BookScreen = ({ match, location }: any) => {
                 </small>
                 <div className="d-flex flex-row align-items-center">
                   <Rating name="read-only" value={book.rating || 0} readOnly />
-                  <h6>{`${book.numOfReview} Reviews`}</h6>
+                  <p className="my-0 mx-2">{`${book.numOfReview} Reviews`}</p>
                 </div>
-                <p className="text-muted">{book.description}</p>
+                <p className="book-description text-muted">{book.description}</p>
                 {book.countAvailable > 0 ?
                   <h6 className="text-success">
                     In Stock
-                </h6>
+                  </h6>
                   :
                   <h6 className="text-danger">
                     Out of Stock
-                </h6>}
+                  </h6>}
 
                 {
                   (book.countAvailable > 0) &&
@@ -103,7 +97,6 @@ const BookScreen = ({ match, location }: any) => {
                 }
               </div>
             </Col>
-            <Col></Col>
           </Row>
 
         </StyledContainer>

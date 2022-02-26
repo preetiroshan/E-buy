@@ -1,4 +1,3 @@
-import React from 'react';
 import { Button, Col, Container, Form, Jumbotron, Row } from 'react-bootstrap';
 import { FcFeedback } from 'react-icons/fc';
 import './Contact.css';
@@ -21,7 +20,7 @@ const Contact = () => {
                     <Form.Control type="email" placeholder="Enter email" />
                     <Form.Text className="text-muted">
                       We'll never share your email with anyone else.
-    </Form.Text>
+                    </Form.Text>
                   </Form.Group>
 
                   <Form.Group className="mb-3">
@@ -35,7 +34,7 @@ const Contact = () => {
                   </Form.Group>
                   <Button variant="primary" type="submit">
                     Send Message
-                </Button>
+                  </Button>
                 </Form>
               </Container>
             </Col>

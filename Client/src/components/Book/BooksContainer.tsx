@@ -1,4 +1,3 @@
-import React from 'react';
 import { CardGroup, Col, Container, Row } from 'react-bootstrap';
 import { TBook } from '../../types';
 import Book from './Book';
@@ -11,11 +10,11 @@ const BooksContainer = ({ books }: BooksContainerProps) => {
   return (
     <Container fluid className="px-4 my-4 justify-content-center" id="bookContainer">
       <Row>
-        <Col md={2}></Col>
-        <Col md={8} lg={8}>
+        <Col md={1}></Col>
+        <Col md={10} lg={10}>
           <Row>
             {books.map((product: TBook, key: number) => (
-              <Col xs={12} sm={6} md={6} lg={4} key={key}>
+              <Col xs={6} sm={6} md={4} lg={3} key={key}>
                 <CardGroup>
                   <Book key={key} book={product} />
                 </CardGroup>
@@ -23,7 +22,7 @@ const BooksContainer = ({ books }: BooksContainerProps) => {
             ))}
           </Row>
         </Col>
-        <Col md={2}></Col>
+        <Col md={1}></Col>
       </Row>
     </Container >
   )

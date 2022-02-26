@@ -1,8 +1,7 @@
-import React, { useState, useCallback } from 'react';
+import { useState, useCallback } from 'react';
 import { Button } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
 import styled from 'styled-components';
-import { idText } from 'typescript';
 import actions from '../../redux/actions/products/productActions';
 import './BookCountSelector.css'
 
@@ -19,7 +18,7 @@ const StyledCountIcon = styled.img`
   height: 1rem;
   background: cover
 `
-const BookCountSelector = ({ id, quantity, handleChange, maxQuantity, handleRemove }: TBookCountSelector) => {
+const BookCountSelector = ({ id, quantity, handleChange, maxQuantity }: TBookCountSelector) => {
   const [count, setCount] = useState(quantity);
   const dispatch = useDispatch();
   const handleAdd = useCallback(() => {

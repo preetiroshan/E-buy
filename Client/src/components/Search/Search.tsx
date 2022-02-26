@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import { useCallback, useState } from 'react';
 import { InputGroup, FormControl, Form } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
@@ -24,7 +24,7 @@ const Search = () => {
   const dispatch = useDispatch()
   const [suggestions, setSuggestions] = useState<TBook[]>([])
   const booksList = useSelector<StoreState, TBookState>((state) => state.products.books);
-  const searchText = useSelector<StoreState, string>((state) => state.products.search.searchText);
+  // const searchText = useSelector<StoreState, string>((state) => state.products.search.searchText);
   const [searchString, setSearchString] = useState('')
 
   const handleChange = useCallback(
@@ -45,11 +45,9 @@ const Search = () => {
 
     },
     [dispatch, searchString])
-  console.log(suggestions)
 
-  console.log("searchText is", searchText)
   return (
-    <div className="search-form">
+    <div className="search-form m-0 p-0">
       <Form onSubmit={handleSearch}>
 
         <InputGroup>

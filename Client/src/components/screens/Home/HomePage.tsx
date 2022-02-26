@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { StoreState } from '../../../redux/store'
 import { TBookState } from '../../../redux/reducers/booksReducer';
 import actions from '../../../redux/actions/products/productActions';
-import HomeCarousel from '../../Home/HomeCarousel';
 import Home from '../../Home/Home';
 import BooksContainer from '../../Book/BooksContainer';
 
@@ -20,15 +19,14 @@ const HomePage = () => {
     }
   }, [dispatch])
 
-  console.log(booksList)
+  console.log(process.env.REACT_APP_STRIPE_API_KEY)
   const filteredBooks = useMemo(() => books.filter((book) =>
     book.name.toLowerCase().includes(searchText.toLowerCase())
   ), [books, searchText])
-  console.log(searchText);
-  console.log(filteredBooks)
+
   return (
     <div>
-      { isLoading && <Spinner animation="grow" variant="info" />}
+      {isLoading && <Spinner animation="grow" variant="info" />}
       {error && <b>Error occurred</b>}
       {
         !searchText &&

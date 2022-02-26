@@ -1,9 +1,7 @@
 import React, { useCallback } from 'react'
 import CartIcon from '../Header/CartIcon'
 import './Sidenav.css';
-import { useDispatch, useSelector } from "react-redux";
-import { StoreState } from '../../redux/store'
-import { TUserState } from "../../redux/reducers/users/signin/signInReducer";
+import { useDispatch } from "react-redux";
 import userActions from '../../redux/actions/user/userActions';
 import { TSignInResponse } from '../../userTypes';
 
@@ -13,7 +11,6 @@ export type TSidenavProps = {
 }
 
 const Sidenav = ({ closeMenu, signInData }: TSidenavProps) => {
-  // const { signInData } = useSelector<StoreState, TUserState>((state) => state.user.signIn);
   const dispatch = useDispatch();
   const handleLogout = useCallback(
     () => {
@@ -35,7 +32,7 @@ const Sidenav = ({ closeMenu, signInData }: TSidenavProps) => {
         {
           (signInData?.name) ?
             <p onClick={handleLogout}>Logout
-            {/* TODO: Change this username from here */}
+              {/* TODO: Change this username from here */}
               <br /> {signInData.name}
             </p>
             :

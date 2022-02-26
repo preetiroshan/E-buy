@@ -33,9 +33,6 @@
     }
     
     .book:hover {
-        /* transform: rotate(-5deg);
-  transition: transform 10ms ease-in;
-  transition-delay: 200ms; */
         box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.2);
         transform: scale(1.05);
     }
