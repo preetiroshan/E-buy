@@ -1,8 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { TCartItem } from '../../types';
-import actions from '../actions';
+import actions from '../actions/products/productActions';
 import Cookie from 'js-cookie';
 
+//To get cart items from cookie initially, if they're present
 const cartItems = Cookie.getJSON("cartItems") || [];
 
 export type TCartState = {
@@ -50,6 +51,11 @@ const cartReducer = createSlice({
     builder.addCase(actions.removeFromCart , (state, { payload }) => {
       state.cartItems = state.cartItems.filter((item) => item.book.id !== payload)
       Cookie.set("cartItems", JSON.stringify(state.cartItems))
+    })
+
+    builder.addCase(actions.emptyCart , (state) => {
+      state.cartItems = []
+      Cookie.remove("cartItems")
     })
   }
 })

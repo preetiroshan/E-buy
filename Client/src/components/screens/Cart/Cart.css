@@ -1,0 +1,12 @@
+.empty-cart {
+  font-size: 2rem;
+  height: 100%;
+}
+
+.bg-empty {
+  background-image: url('../../../images/empty-list.png');
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  justify-content: center;
+}
