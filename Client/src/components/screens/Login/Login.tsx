@@ -18,10 +18,8 @@ const Login = ({ location }: any) => {
 	// const location = useLocation();
 
 	const history = useHistory();
-	// console.log("hello")
 	useEffect(() => {
-		console.log("already signed in")
-		!(signInData && signInData.name && error) && alert("Invalid Credentials")
+		!(signInData && signInData.name) && error && alert("Invalid Credentials")
 		signInData && signInData.name && history.push(location.state.redirectPath || '/')
 	}, [signInData, history, location, error])
 
@@ -42,7 +40,7 @@ const Login = ({ location }: any) => {
 	}
 	return (
 		<>
-			{ isLoading && <Spinner animation="grow" />}
+			{isLoading && <Spinner animation="grow" />}
 			<div className="d-flex flex-row justify-content-center">
 				<Col lg={4} md={6}>
 					<Jumbotron className="my-4" fluid>
@@ -63,52 +61,52 @@ const Login = ({ location }: any) => {
 									isValid,
 									errors,
 								}) => (
-										<Form noValidate onSubmit={handleSubmit}>
-											{/* {console.log("values", values)} */}
-											<Col>
-												<Form.Group as={Col} controlId="validationFormik02">
-													<Form.Label>Email</Form.Label>
-													<Form.Control
-														type="email"
-														name="email"
-														placeholder="user@somewhere.com"
-														value={values.email}
-														onChange={handleChange}
-														isInvalid={touched.email && !!errors.email}
-													// error={errors.email}
-													// autoComplete="off"
-													/>
-													<Form.Control.Feedback type="invalid">
-														{errors.email}
-													</Form.Control.Feedback>
-												</Form.Group>
+									<Form noValidate onSubmit={handleSubmit}>
+										{/* {console.log("values", values)} */}
+										<Col>
+											<Form.Group as={Col} controlId="validationFormik02">
+												<Form.Label>Email</Form.Label>
+												<Form.Control
+													type="email"
+													name="email"
+													placeholder="user@somewhere.com"
+													value={values.email}
+													onChange={handleChange}
+													isInvalid={touched.email && !!errors.email}
+												// error={errors.email}
+												// autoComplete="off"
+												/>
+												<Form.Control.Feedback type="invalid">
+													{errors.email}
+												</Form.Control.Feedback>
+											</Form.Group>
 
-												<Form.Group as={Col} controlId="validationFormik03">
-													<Form.Label>Password</Form.Label>
-													<Form.Control
-														type="password"
-														placeholder="Enter Password"
-														name="password"
-														value={values.password}
-														onChange={handleChange}
-														isInvalid={touched.password && !!errors.password}
-													/>
-													<Form.Control.Feedback type="invalid">
-														{errors.password}
-													</Form.Control.Feedback>
-												</Form.Group>
-												<div className="d-flex flex-column align-items-center">
-													<Button type="submit">Login</Button>
-													<br />
-													<br />
-											Don't have an account?
-											<Link to="/register"><Button type="submit">
-														Sign Up
-											</Button></Link>
-												</div>
-											</Col>
-										</Form>
-									)}
+											<Form.Group as={Col} controlId="validationFormik03">
+												<Form.Label>Password</Form.Label>
+												<Form.Control
+													type="password"
+													placeholder="Enter Password"
+													name="password"
+													value={values.password}
+													onChange={handleChange}
+													isInvalid={touched.password && !!errors.password}
+												/>
+												<Form.Control.Feedback type="invalid">
+													{errors.password}
+												</Form.Control.Feedback>
+											</Form.Group>
+											<div className="d-flex flex-column align-items-center">
+												<Button type="submit">Login</Button>
+												<br />
+												<br />
+												Don't have an account?
+												<Link to="/register"><Button type="submit">
+													Sign Up
+												</Button></Link>
+											</div>
+										</Col>
+									</Form>
+								)}
 							</Formik>
 						</Container>
 					</Jumbotron>

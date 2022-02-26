@@ -7,12 +7,12 @@ const Home = () => {
     <div className="home" id="home">
       <Container className="py-4">
         <Row className="my-2">
-          <Col md={6} className="d-flex align-items-center">
+          <Col md={6} className="d-flex justify-content-center mb-4 align-items-center">
             <div className="text-center">
               <h3>Stop Thinking, Start Reading!</h3>
               <p>
                 Every Genre that you like
-            </p>
+              </p>
               <Button variant="light"><a href="#bookContainer">Pick one</a></Button>
             </div>
           </Col>

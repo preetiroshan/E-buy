@@ -6,6 +6,7 @@ import { TBook } from '../../types';
 import { Link } from 'react-router-dom'
 import '../customStyle.css';
 import Badge from 'react-bootstrap/Badge';
+import './Book.css'
 
 type TBookProps = {
   book: TBook;
@@ -31,9 +32,9 @@ const Book = ({ book }: TBookProps) => {
         // style={{ height: '15rem' }}
         />
       </div>
-      <Card.Body>
-        <Card.Title style={{ height: '3rem', display: 'flex', alignItems: 'center', justifyContent: 'center' }} >
-          <Link className="text-center" to={
+      <Card.Body className="p-1">
+        <Card.Title style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }} >
+          <Link className="text-center h6" to={
             {
               pathname: `/book/${name.replace(/\s/g, '')}`,
               state: {
@@ -47,7 +48,7 @@ const Book = ({ book }: TBookProps) => {
 
         <Card.Subtitle className="mb-2 text-muted" style={{ height: 'max-content' }}>{author}</Card.Subtitle>
         <b className="text-success mx-2">{price}</b>
-        <b className={discount ? "original-price" : "none"}>&#8377;{originalPrice}</b>{` `}
+        <b className={"h1" + (discount ? "original-price" : "none")}>&#8377;{originalPrice}</b>{` `}
         <Badge pill variant="warning">
           {price ? (originalPrice === price ? null : `Save ${discount}%`) : null}
         </Badge>
@@ -78,7 +79,6 @@ const Book = ({ book }: TBookProps) => {
           </Card.Footer>
           <Card.Footer>
             <div className="d-flex justify-content-between my-1">
-              {/* <Card.Link href="#"><FcLike size={20} /></Card.Link> */}
               <Link className="text-center" to={`/book/${name.replace(/\s/g, '')}`}>
                 <Button size="sm">Add to Cart</Button>
               </Link>

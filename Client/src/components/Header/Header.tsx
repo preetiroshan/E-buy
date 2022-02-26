@@ -26,7 +26,7 @@ const Header = () => {
 	}
 
 	return (
-		<>
+		<div className="header" onScroll={() => console.log("csrolled")}>
 			<Sidenav closeMenu={closeMenu} signInData={signInData} />
 			<Row className="header-nav">
 				<Col md={2} xs={2} sm={3}>
@@ -35,7 +35,7 @@ const Header = () => {
 						<a href="/"><img src="/assets/ebuy.png" alt="logo" className="menu-icon" /></a>
 					</Row>
 				</Col>
-				<Col md={8} xs={6} sm={5}>
+				<Col md={8} xs={8} sm={8}>
 					<Search />
 				</Col>
 				<Col md={1} sm={2}>
@@ -45,12 +45,12 @@ const Header = () => {
 					<img src="/assets/user.png" alt="user-icon" className="nav-icon" id="cartIcon" />
 				</Col>
 			</Row>
-
+			{/*
 			<Row className="justify-content-center mr-0">
 				<Col md={8}>
 				</Col>
-			</Row>
-		</>
+			</Row> */}
+		</div>
 	);
 };
 

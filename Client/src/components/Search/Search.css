@@ -1,19 +1,28 @@
+.form-control {
+    border: 0.5px solid var(--primary-orange)!important
+}
+
 .form-control:focus {
-  box-shadow: none;
+    box-shadow: none!important;
+    ;
 }
 
 ul {
-  list-style-type: none;
+    list-style-type: none;
 }
 
 li:hover {
-  background-color: #dedfe0;
+    background-color: #dedfe0;
 }
 
 #search-icon {
-  max-height: 38px;
+    max-height: 38px;
 }
 
 .search-form {
-  min-width: 75%;
+    min-width: 75%;
+}
+
+input:focus {
+    outline: none;
 }

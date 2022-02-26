@@ -43,9 +43,9 @@ const CartScreen = ({ match }: any) => {
     <>
       {
         cartItems.length ?
-          <Container className="cart">
+          <Container className="cart mx-2">
             <Row className="mt-4">
-              <Col md={6}>
+              <Col md={6} sm={6} xs={6}>
                 {
                   cartItems ?
                     cart.cartItems.map((item, key) => (
@@ -55,7 +55,7 @@ const CartScreen = ({ match }: any) => {
                 }
               </Col>
 
-              <Col md={6} sm={6} xs={8}>
+              <Col md={6} sm={6} xs={6}>
                 <CartSummary
                   numOfItems={numOfItems}
                   subTotal={subTotal}

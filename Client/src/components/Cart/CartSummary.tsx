@@ -41,9 +41,9 @@ const CartSummary = ({ numOfItems, subTotal, shippingCost, totalAmount, cartItem
 
       {/* </Col> */}
       <div className="d-flex justify-content-center mt-3">
-        <Button disabled={!cartItems.length} className="btn btn-warning">
+        <Button disabled={!cartItems.length} className="btn btn-warning px-1">
           Proceed To Checkout
-          <img style={{ maxHeight: "2rem" }} src="/assets/bag.png" alt="bag" />
+          <img style={{ maxHeight: "1.5rem" }} src="/assets/bag.png" alt="bag" />
         </Button>
       </div>
     </Jumbotron>
