@@ -42,6 +42,9 @@ Client/node_modules/
 Server/node_modules/
 jspm_packages/
 
+Client/package.lock.json
+Server/package.lock.json
+
 # TypeScript v1 declaration files
 typings/
 
