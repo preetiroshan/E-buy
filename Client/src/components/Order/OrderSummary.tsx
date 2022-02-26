@@ -34,7 +34,6 @@ const OrderSummary = ({ handleClose, handleShow, show, totalPrice }: TOrderSumma
     zipCode: "",
   };
   const [address, setAddress] = useState<TAddress>(initialAddress)
-
   const handlePaymentSuccess = useCallback(
     (token: Token) => {
       setCurrentState(2)
@@ -51,7 +50,6 @@ const OrderSummary = ({ handleClose, handleShow, show, totalPrice }: TOrderSumma
       <Modal
         show={show}
         onHide={handleFinalClose}
-        backdrop="static"
         keyboard={false}
       >
         {
