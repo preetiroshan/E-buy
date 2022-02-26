@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { Container, Jumbotron, Form, Col, Button, Spinner } from "react-bootstrap";
 import { Formik } from "formik";
 import * as yup from "yup";
@@ -6,7 +6,7 @@ import userActions from "../../../redux/actions/user/userActions";
 import { useDispatch, useSelector } from "react-redux";
 import { StoreState } from '../../../redux/store'
 import { TUserState } from "../../../redux/reducers/users/signin/signInReducer";
-import { Link, useHistory, useLocation } from "react-router-dom"
+import { Link, useHistory } from "react-router-dom"
 import { signInFilter } from "../../../userTypes";
 
 const Login = ({ location }: any) => {
@@ -15,7 +15,6 @@ const Login = ({ location }: any) => {
 		email: yup.string().email("Not a valid email").required(),
 		password: yup.string().required(),
 	});
-	// const location = useLocation();
 
 	const history = useHistory();
 	useEffect(() => {
@@ -25,7 +24,6 @@ const Login = ({ location }: any) => {
 
 	const dispatch = useDispatch();
 	const handleSubmit = (values: any) => {
-		console.log("submit called");
 		dispatch(
 			userActions.signIn({
 				email: values.email,
@@ -54,15 +52,11 @@ const Login = ({ location }: any) => {
 								{({
 									handleChange,
 									handleSubmit,
-									handleBlur,
-									handleReset,
 									values,
 									touched,
-									isValid,
 									errors,
 								}) => (
 									<Form noValidate onSubmit={handleSubmit}>
-										{/* {console.log("values", values)} */}
 										<Col>
 											<Form.Group as={Col} controlId="validationFormik02">
 												<Form.Label>Email</Form.Label>

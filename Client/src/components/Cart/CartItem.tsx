@@ -1,10 +1,9 @@
-import React, { useCallback, useEffect, useState } from 'react';
-import { Button, Col, Form, Row } from 'react-bootstrap';
+import { useCallback, useEffect, useState } from 'react';
+import { Col, Form, Row } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
 import styled from 'styled-components';
 import actions from '../../redux/actions/products/productActions';
 import { TCartItem } from '../../types'
-import Book from '../Book/Book';
 import BookCountSelector from '../Book/BookCountSelector';
 
 type TCartItemProps = {
@@ -12,8 +11,8 @@ type TCartItemProps = {
 }
 
 const CartImage = styled.img`
-   width: 8rem;
-   height: 8rem;
+   width: 4rem;
+   height: 4rem;
 `
 
 const CartItem = ({ item }: TCartItemProps) => {
@@ -34,7 +33,7 @@ const CartItem = ({ item }: TCartItemProps) => {
   return (
     <>
       <hr />
-      { book &&
+      {book &&
         <>
           <Row className="justify-content-start align-items-start">
             <Col sm={4}>

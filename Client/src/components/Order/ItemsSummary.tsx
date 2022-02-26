@@ -1,4 +1,3 @@
-import React from 'react';
 import { Table } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
 import { TCartState } from '../../redux/reducers/cartReducer';

@@ -1,4 +1,3 @@
-import React from 'react';
 import { CardGroup, Col, Container, Row } from 'react-bootstrap';
 import { TBook } from '../../types';
 import Book from './Book';
@@ -15,7 +14,7 @@ const BooksContainer = ({ books }: BooksContainerProps) => {
         <Col md={10} lg={10}>
           <Row>
             {books.map((product: TBook, key: number) => (
-              <Col xs={6} sm={6} md={6} lg={3} key={key}>
+              <Col xs={6} sm={6} md={4} lg={3} key={key}>
                 <CardGroup>
                   <Book key={key} book={product} />
                 </CardGroup>

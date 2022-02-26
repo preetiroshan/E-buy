@@ -4,6 +4,7 @@
     --white: hsl(0, 0%, 100%);
     --pink: #e36e9b;
     --grey-bg: hsl(219, 9%, 45%);
+    --grey: hsl(219, 9%, 45%);
 }
 
 html {

@@ -1,7 +1,6 @@
 import React from 'react'
 import { Button, Col, Container, Form } from 'react-bootstrap';
 import { Formik } from "formik";
-import * as yup from "yup";
 import { TAddress } from '../../types';
 
 type TAddressFormProps = {
@@ -13,12 +12,6 @@ type TAddressFormProps = {
 }
 
 const AddressForm = ({ initialAddress, setAddress, setCurrentState, currentState, handleClose }: TAddressFormProps) => {
-  const initialValues: TAddress = {
-    name: "",
-    addressLine1: "",
-    addressLine2: "",
-    zipCode: ""
-  }
 
   return (
     <Container>
@@ -39,12 +32,10 @@ const AddressForm = ({ initialAddress, setAddress, setCurrentState, currentState
           handleReset,
           values,
           touched,
-          isValid,
           errors,
         }) => (
           <Form noValidate onSubmit={handleSubmit}>
             <Col className="p-0">
-              {console.log(errors)}
               <Form.Group as={Col} controlId="name">
                 <Form.Label>Name</Form.Label>
                 <Form.Control

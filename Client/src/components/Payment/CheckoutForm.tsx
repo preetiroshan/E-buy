@@ -1,4 +1,3 @@
-import React from 'react';
 import { Button } from 'react-bootstrap';
 import StripeCheckout, { Token } from 'react-stripe-checkout';
 
@@ -8,12 +7,7 @@ type T = {
 }
 const CheckoutForm = ({ price, handlePaymentSuccess }: T) => {
   const priceForStripe = price * 100;
-  const publishableKey = 'pk_test_51K8mumSI82v7er65eie4zGjEaIJXCfSjnA00eJH24JadGKukM8Rx9D4grILNXubmK79HNAtLoa2c9gdxZl0zaIrf005yhVGrEu';
-
-  // const onToken = (token: any) => {
-  //   console.log(token);
-  //   alert('Payment Succesful!');
-  // };
+  const publishableKey: string = process.env.STRIPE_API_KEY || "";
 
   return (
     <StripeCheckout

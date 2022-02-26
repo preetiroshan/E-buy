@@ -1,7 +1,6 @@
-import React from 'react'
 import { Button, Col, Jumbotron, Row } from 'react-bootstrap'
-import { TCartItem } from '../../types'
-import CheckoutForm from "../Payment/CheckoutForm";
+import { TCartItem } from '../../types';
+import "./CartSummary.css"
 
 export type TCartSummaryProps = {
   numOfItems: number;
@@ -14,7 +13,7 @@ export type TCartSummaryProps = {
 
 const CartSummary = ({ numOfItems, subTotal, shippingCost, totalPrice, cartItems, handleShow }: TCartSummaryProps) => {
   return (
-    <Jumbotron className="my-4 p-4 card-summary d-flex flex-column" fluid>
+    <Jumbotron className="my-4 p-4 cart-summary d-flex flex-column" fluid>
       {/* <Col lg={4}> */}
 
 
@@ -23,13 +22,13 @@ const CartSummary = ({ numOfItems, subTotal, shippingCost, totalPrice, cartItems
           Cart Summary
         </Button>
       </Row>
-      <Row className="px-4 justify-content-between">
-        <Col md={6} sm={6}>
+      <Row className="px-2 justify-content-between">
+        <Col md={6} sm={8} xs={8}>
           <Row><b>Subtotal:</b> </Row>
           <Row><b>Shipping: </b></Row>
           <Row><b>Total Payable:</b> </Row>
         </Col>
-        <Col md={6} sm={6}>
+        <Col md={6} sm={4} xs={4}>
           <Row> &#8377;{subTotal}</Row>
           <Row>&#8377;{shippingCost}</Row>
           <Row><b>&#8377;{totalPrice}</b></Row>
@@ -40,7 +39,7 @@ const CartSummary = ({ numOfItems, subTotal, shippingCost, totalPrice, cartItems
           onClick={handleShow}
         >
           Proceed To Checkout
-          <img style={{ maxHeight: "1.5rem" }} src="/assets/bag.png" alt="bag" />
+          <img style={{ maxHeight: "1.2rem" }} src="/assets/bag.png" alt="bag" />
         </Button>
       </div>
     </Jumbotron>

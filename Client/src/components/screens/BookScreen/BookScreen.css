@@ -1,13 +1,19 @@
 .add-cart-btn {
-    /* max-height: 10rem; */
-    /* width: auto
-     */
     max-width: 20rem;
-    min-width: 15rem;
+    min-width: 200px;
 }
 
 .add-cart-btn:hover {}
 
 .add-cart-btn img {
-    max-height: 30px;
+    max-height: 40px;
+}
+
+.book {
+    width: 20vw;
+    height: auto;
+}
+
+.book-description {
+    font-size: 0.9rem!important;
 }
