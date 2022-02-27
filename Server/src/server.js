@@ -5,6 +5,7 @@ import data from './dataCopy.js';
 import productRouter from './router/productRouter.js';
 import userRouter from './router/userRouter.js';
 import bodyParser from 'body-parser';
+import cors from "cors"
 
 dotenv.config()
 const app = express();
@@ -29,6 +30,10 @@ mongoose.connect(connectionString, {
         useCreateIndex: true
     })
     // .then(() => {
+
+app.use(cors({
+    origin: 'https://ebuy-bookshop.netlify.app'
+}));
 
 app.use('/api/users', userRouter)
 app.use('/api/products', productRouter);
