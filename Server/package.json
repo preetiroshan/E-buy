@@ -10,8 +10,7 @@
     "type": "module",
 
     "scripts": {
-        "start": "npx nodemon --exec npx babel-node src/server.js",
-        "build": "npm run build"
+        "start": "npx nodemon --exec npx babel-node src/server.js"
     },
     "keywords": [],
     "author": "",
