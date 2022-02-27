@@ -9,7 +9,7 @@ const services = {
   },
 
   getBookDetails(name: string): Promise<TBook> {
-    return fetch(`/api/products/books/${name}`)
+    return fetch(`https://ebuyy.herokuapp.com/api/products/books/${name}`)
       .then((res) => res.json())
   },
 
