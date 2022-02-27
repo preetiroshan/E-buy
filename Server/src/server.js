@@ -18,18 +18,11 @@ const PORT = process.env.PORT || 5000;
 
 const connectionString = process.env.MONGODB_URL || ""
 
-// mongoose.connect(connectionString, {
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true,
-//     useCreateIndex: true
-// })
-
 mongoose.connect(connectionString, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-        useCreateIndex: true
-    })
-    // .then(() => {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true
+})
 
 app.use(cors({
     origin: 'https://ebuy-bookshop.netlify.app'
@@ -43,4 +36,3 @@ app.use((err, req, res, next) => {
 })
 
 app.listen(PORT, () => console.log(`Server is running on port ${PORT}. ${process.env.MONGODB_URL}, ${connectionString}`));
-// })
