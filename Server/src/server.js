@@ -5,6 +5,7 @@ import data from './dataCopy.js';
 import productRouter from './router/productRouter.js';
 import userRouter from './router/userRouter.js';
 import bodyParser from 'body-parser';
+import cors from "cors"
 
 dotenv.config()
 const app = express();
@@ -17,18 +18,15 @@ const PORT = process.env.PORT || 5000;
 
 const connectionString = process.env.MONGODB_URL || ""
 
-// mongoose.connect(connectionString, {
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true,
-//     useCreateIndex: true
-// })
-
 mongoose.connect(connectionString, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-        useCreateIndex: true
-    })
-    // .then(() => {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true
+})
+
+app.use(cors({
+    origin: 'https://ebuy-bookshop.netlify.app'
+}));
 
 app.use('/api/users', userRouter)
 app.use('/api/products', productRouter);
@@ -37,5 +35,4 @@ app.use((err, req, res, next) => {
     res.status(500).send({ message: err.message })
 })
 
-app.listen(PORT, () => console.log(`Server is running on port ${PORT}. ${process.env.MONGODB_URL}, ${connectionString}`));
-// })
+app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
