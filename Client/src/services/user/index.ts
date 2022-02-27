@@ -4,7 +4,7 @@ import { signInFilter, TSignInResponse } from "../../userTypes";
 
 const userService = {
   signIn(credentials: signInFilter): Promise<TSignInResponse> {
-    return fetch('/api/users/signin', {
+    return fetch('https://ebuyy.herokuapp.com/api/users/signin', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -15,7 +15,7 @@ const userService = {
   },
 
   register(credentials: TRegisterParams): Promise<TSignInResponse> {
-    return fetch('/api/users/register', {
+    return fetch('https://ebuyy.herokuapp.com/api/users/register', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
