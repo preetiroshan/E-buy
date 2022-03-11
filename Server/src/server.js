@@ -25,7 +25,8 @@ mongoose.connect(connectionString, {
 })
 
 app.use(cors({
-    origin: 'https://ebuy-bookshop.netlify.app'
+    // origin: 'https://ebuy-bookshop.netlify.app' // Uncomment this after completion of project
+    origin: "*"
 }));
 
 app.use('/api/users', userRouter)

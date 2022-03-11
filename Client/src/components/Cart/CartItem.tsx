@@ -5,14 +5,15 @@ import styled from 'styled-components';
 import actions from '../../redux/actions/products/productActions';
 import { TCartItem } from '../../types'
 import BookCountSelector from '../Book/BookCountSelector';
+import './CartItem.css'
 
 type TCartItemProps = {
   item: TCartItem;
 }
 
 const CartImage = styled.img`
-   width: 4rem;
-   height: 4rem;
+   width: 10em;
+   height: 10em;
 `
 
 const CartItem = ({ item }: TCartItemProps) => {
@@ -36,12 +37,12 @@ const CartItem = ({ item }: TCartItemProps) => {
       {book &&
         <>
           <Row className="justify-content-start align-items-start">
-            <Col sm={4}>
+            <Col sm={4} md={6} xs={6}>
               <CartImage alt={book.name} src={book.url} />
 
             </Col>
 
-            <Col sm={10} md={6} className="mt-4">
+            <Col sm={8} md={6} className="mt-4">
               <Row>
                 <div className="d-flex-md flex-column align-items-stretch">
                   {book.name}
@@ -51,12 +52,13 @@ const CartItem = ({ item }: TCartItemProps) => {
                 </div>
               </Row>
               <Row>
+
                 <BookCountSelector
                   id={book.id}
                   maxQuantity={book.countAvailable} quantity={quantity} handleChange={setQuantity} handleRemove={handleRemove} />
                 <img
                   onClick={handleRemove}
-                  style={{ width: "25px", height: "auto" }} className="trash-icon" src="/assets/trash.png" alt="Remove from cart icon" />
+                  className="trash-icon" src="/assets/trash.png" alt="Remove from cart icon" />
               </Row>
             </Col>
 

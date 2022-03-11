@@ -1,11 +1,11 @@
-import React, { useEffect, useMemo } from 'react';
-import { Spinner } from 'react-bootstrap';
+import { useEffect, useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { StoreState } from '../../../redux/store'
 import { TBookState } from '../../../redux/reducers/booksReducer';
 import actions from '../../../redux/actions/products/productActions';
 import Home from '../../Home/Home';
 import BooksContainer from '../../Book/BooksContainer';
+import Loader from '../../Loader'
 
 const HomePage = () => {
   const booksList = useSelector<StoreState, TBookState>((state) => state.products.books);
@@ -19,19 +19,17 @@ const HomePage = () => {
     }
   }, [dispatch])
 
-  console.log(process.env.REACT_APP_STRIPE_API_KEY)
   const filteredBooks = useMemo(() => books.filter((book) =>
     book.name.toLowerCase().includes(searchText.toLowerCase())
   ), [books, searchText])
 
   return (
     <div>
-      {isLoading && <Spinner animation="grow" variant="info" />}
+      {isLoading && <Loader />}
       {error && <b>Error occurred</b>}
       {
         !searchText &&
         <>
-          {/* <HomeCarousel /> */}
           <Home />
         </>
       }

@@ -30,8 +30,7 @@ a:hover {
     border-color: var(--primary-orange) !important;
 }
 
-
-/*
-.menu-icon {
-    border-radius: 50% !important;
-} */
+.btn:hover {
+    outline: none;
+    transform: scale(0.98);
+}
