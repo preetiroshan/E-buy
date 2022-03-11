@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Container, Jumbotron, Form, Col, Button, Spinner } from "react-bootstrap";
+import { Container, Jumbotron, Form, Col, Button, } from "react-bootstrap";
 import { Formik } from "formik";
 import * as yup from "yup";
 import userActions from "../../../redux/actions/user/userActions";
@@ -8,6 +8,7 @@ import { StoreState } from '../../../redux/store'
 import { TUserState } from "../../../redux/reducers/users/signin/signInReducer";
 import { Link, useHistory } from "react-router-dom"
 import { signInFilter } from "../../../userTypes";
+import Loader from "../../Loader";
 
 const Login = ({ location }: any) => {
 	const { signInData, isLoading, error } = useSelector<StoreState, TUserState>((state) => state.user.signIn);
@@ -38,7 +39,7 @@ const Login = ({ location }: any) => {
 	}
 	return (
 		<>
-			{isLoading && <Spinner animation="grow" />}
+			{isLoading && <Loader />}
 			<div className="d-flex flex-row justify-content-center">
 				<Col lg={4} md={6}>
 					<Jumbotron className="my-4" fluid>

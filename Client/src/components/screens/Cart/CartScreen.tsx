@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Col, Container, Row } from 'react-bootstrap'
+import { Col, Row } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useLocation } from 'react-router';
 import actions from '../../../redux/actions/products/productActions';
@@ -48,7 +48,7 @@ const CartScreen = ({ match }: any) => {
     <>
       {
         cartItems.length ?
-          <Container className="cart mx-2">
+          <div className="cart mx-4">
             <Row className="mt-4">
               <Col md={6} sm={6} xs={6}>
                 {
@@ -76,7 +76,7 @@ const CartScreen = ({ match }: any) => {
             {
               showSummary && <OrderSummary totalPrice={totalPrice} show={showSummary} handleShow={handleShow} handleClose={handleClose} />
             }
-          </Container>
+          </div>
           : <EmptyCart />
 
       }

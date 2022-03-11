@@ -33,7 +33,7 @@ const Book = ({ book }: TBookProps) => {
       </div>
       <Card.Body className="p-1">
         <Card.Title className="book-title" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }} >
-          <Link className="text-center book-title" to={
+          <Link className="text-center book-title" onClick={() => window.scrollTo(0, 0)} to={
             {
               pathname: `/book/${name.replace(/\s/g, '')}`,
               state: {
@@ -78,7 +78,9 @@ const Book = ({ book }: TBookProps) => {
           </Card.Footer>
           <Card.Footer>
             <div className="d-flex justify-content-between my-1">
-              <Link className="text-center" to={`/book/${name.replace(/\s/g, '')}`}>
+              <Link className="text-center" to={`/book/${name.replace(/\s/g, '')}`} onClick={() => {
+                window.scrollTo(0, 0)
+              }}>
                 <Button size="sm">Add to Cart</Button>
               </Link>
 
@@ -86,7 +88,7 @@ const Book = ({ book }: TBookProps) => {
           </Card.Footer>
         </>
       }
-    </Card>
+    </Card >
 
   )
 }
