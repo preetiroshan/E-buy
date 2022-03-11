@@ -36,17 +36,17 @@ const CartItem = ({ item }: TCartItemProps) => {
       <hr />
       {book &&
         <>
-          <Row className="justify-content-start align-items-start">
-            <Col sm={4} md={6} xs={6}>
-              <CartImage alt={book.name} src={book.url} />
+          <Row className="">
+            <Col sm={4} md={6} xs={8}>
+              <CartImage alt={book.name} src={book.url} className='ml-sm-2' />
 
             </Col>
 
-            <Col sm={8} md={6} className="mt-4">
+            <Col sm={8} md={6} className="mt-4 ml-3 ml-sm-0">
               <Row>
-                <div className="d-flex-md flex-column align-items-stretch">
+                <div className="d-flex-md flex-column align-items-stretch text-wrap">
                   {book.name}
-                  <p className="text-muted">{book.author}</p>
+                  <p className="text-muted word-wrap">{book.author}</p>
                   <Form.Group>
                   </Form.Group>
                 </div>

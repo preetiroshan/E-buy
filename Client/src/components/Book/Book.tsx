@@ -45,7 +45,7 @@ const Book = ({ book }: TBookProps) => {
       </Card.Body>
       <Card.Footer className="card-footer-custom">
 
-        <Card.Subtitle className="mb-2 h5 text-muted" style={{ height: 'max-content' }}>{author}</Card.Subtitle>
+        <Card.Subtitle className="mb-2 h4 text-muted" style={{ height: 'max-content' }}>{author}</Card.Subtitle>
         <b className="text-success mx-2">{price}</b>
         <b className={discount ? "original-price" : "none"}>&#8377;{originalPrice}</b>{` `}
         <Badge pill variant="warning">
