@@ -19,7 +19,7 @@ const Login = ({ location }: any) => {
 	const history = useHistory();
 	useEffect(() => {
 		!(signInData && signInData.name) && error && alert("Invalid Credentials")
-		signInData && signInData.name && history.push(location.state.redirectPath || '/')
+		signInData && signInData.name && history.push(location?.state?.redirectPath || '/')
 	}, [signInData, history, location, error])
 
 	const dispatch = useDispatch();
