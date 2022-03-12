@@ -32,7 +32,6 @@ const Search = () => {
       setSearchString(e.target.value)
       let suggestion = e.target.value && booksList.books.filter((book) => (book.name.toLowerCase().includes(e.target.value.toLowerCase())));
       setSuggestions(suggestion)
-
     },
     [booksList.books],
   )
@@ -40,11 +39,16 @@ const Search = () => {
   const handleSearch = useCallback(
     (e) => {
       e.preventDefault();
-      dispatch(actions.setSearchText(searchString))
       setSuggestions([])
-
+      dispatch(actions.setSearchText(searchString))
     },
     [dispatch, searchString])
+
+  const handleClick = useCallback(() => {
+    dispatch(actions.setSearchText(''))
+    setSuggestions([])
+    setSearchString("")
+  }, [dispatch])
 
   return (
     <div className="search-form m-0 p-0">
@@ -78,7 +82,9 @@ const Search = () => {
                     state: {
                       id: book._id
                     }
-                  }} onClick={() => { dispatch(actions.setSearchText('')) }} >{book.name}</NavLink>
+                  }} onClick={handleClick}>
+                    {book.name}
+                  </NavLink>
                 </li>
               )
             }

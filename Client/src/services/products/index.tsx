@@ -4,17 +4,17 @@ import { signInFilter, TSignInResponse } from "../../userTypes";
 
 const services = {
   getProducts(): Promise<TBook[]> {
-    return fetch('/api/products/books')
+    return fetch('https://ebuyy.herokuapp.com/api/products/books')
       .then((res) => res.json())
   },
 
   getBookDetails(name: string): Promise<TBook> {
-    return fetch(`/api/products/books/${name}`)
+    return fetch(`https://ebuyy.herokuapp.com/api/products/books/${name}`)
       .then((res) => res.json())
   },
 
   signIn(credentials: signInFilter): Promise<TSignInResponse> {
-    return fetch('/api/users/signin', {
+    return fetch('https://ebuyy.herokuapp.com/api/users/signin', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

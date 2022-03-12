@@ -1,11 +1,11 @@
 import express from 'express';
+import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import data from './dataCopy.js';
 import productRouter from './router/productRouter.js';
 import userRouter from './router/userRouter.js';
 import bodyParser from 'body-parser';
-import dotenv from 'dotenv';
-import crypto from 'crypto';
+import cors from "cors"
 
 dotenv.config()
 const app = express();
@@ -16,13 +16,19 @@ app.use(express.urlencoded({ extended: true }));
 
 const PORT = process.env.PORT || 5000;
 
-const connectionString = process.env.MONGODB_URL
+const connectionString = process.env.MONGODB_URL || ""
 
 mongoose.connect(connectionString, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true
 })
+
+app.use(cors({
+    // origin: 'https://ebuy-bookshop.netlify.app' // Uncomment this after completion of project
+    origin: "*"
+}));
+
 app.use('/api/users', userRouter)
 app.use('/api/products', productRouter);
 

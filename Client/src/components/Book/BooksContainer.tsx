@@ -14,7 +14,7 @@ const BooksContainer = ({ books }: BooksContainerProps) => {
         <Col md={10} lg={10}>
           <Row>
             {books.map((product: TBook, key: number) => (
-              <Col xs={6} sm={6} md={4} lg={3} key={key}>
+              <Col xs={6} sm={4} md={4} lg={3} key={key}>
                 <CardGroup>
                   <Book key={key} book={product} />
                 </CardGroup>
