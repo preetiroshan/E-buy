@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from 'react'
-import { Row, Col, Button, Form, Spinner, Container } from 'react-bootstrap';
+import { Row, Col, Button, Form, Container } from 'react-bootstrap';
 import styled from 'styled-components';
 import Rating from '@material-ui/core/Rating';
 import { useDispatch, useSelector } from 'react-redux';
@@ -9,6 +9,7 @@ import actions from '../../../redux/actions/products/productActions';
 import { useHistory } from 'react-router';
 import BookCountSelector from '../../Book/BookCountSelector';
 import CartIcon from '../../Header/CartIcon';
+import Loader from '../../Loader'
 import "./BookScreen.css"
 
 const StyledContainer = styled(Container)`
@@ -40,15 +41,13 @@ const BookScreen = ({ location }: any) => {
 
   return (
     <>
-      {isLoading && <Spinner animation="border" role="status">
-        <span className="sr-only">Loading...</span>
-      </Spinner>}
+      {isLoading && <Loader />}
       {error && <b>Error occurred</b>}
       {
         book.id &&
         <StyledContainer className="p-4 d-flex align-items-center book-screen-container">
           <Row className='mt-4'>
-            <Col sm={4} xs={4} className="mt-4">
+            <Col sm={4} xs={4} className="mt-4 p-4">
               <img className="book" src={book.url} alt={book.name} />
             </Col>
             <Col sm={8} xs={8} className="mt-4">
@@ -58,7 +57,7 @@ const BookScreen = ({ location }: any) => {
                 &#8377;{book.price}
                 <br />
                 <small className="text-muted"><del>
-                  {book.originalPrice}
+                  &#8377;{book.originalPrice}
                 </del>
                 </small>
                 <div className="d-flex flex-row align-items-center">

@@ -31,9 +31,6 @@ const booksReducer = createSlice({
       state.books =[]
       state.error = 'Error'
     })
-    builder.addCase(actions.clearAllBooks , (state) => {
-      state.books =[]
-    })
   }
 })
 
